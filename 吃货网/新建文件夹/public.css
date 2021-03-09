@@ -1,0 +1,68 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: rgb(248, 248, 248);
+}
+a{
+    text-decoration: none;
+}
+ul li{
+    list-style: none;
+}
+ul li a:hover{
+    color: #ff8555;
+    transition: all 0.1s linear 0s;
+}
+.grid{
+    display: flex;
+}
+.grid-cell--1{
+    flex-grow: 1;
+}
+.grid-cell--2{
+    flex-grow: 2;
+}
+.grid-cell--3{
+    flex-grow: 3;
+}
+.grid-cell--4{
+    flex-grow: 4;
+}
+.grid-cell--5{
+    flex-grow: 5;
+}
+.grid-cell--6{
+    flex-grow: 6;
+}
+.grid-cell--7{
+    flex-grow: 7;
+}
+.grid-cell--8{
+    flex-grow: 8;
+}
+.grid-cell--9{
+    flex-grow: 9;
+}
+/* 设置样式让块标签居中 */
+.middle{
+    width: 80%;
+    margin: auto;
+}
+/* 指定的字体颜色 */
+#text-color{
+    color: #ff8555;
+}
+ /* 默认状态 */
+ .full-star {
+    background-image: url('../img/fullstar.png');
+  }
+  /* 全星 */
+  .empty-star {
+    background-image: url('../img/emptystar.png');
+  }
+  /* 半星 */
+  .half-star {
+    background-image: url('../img/halfstar.png');
+  }

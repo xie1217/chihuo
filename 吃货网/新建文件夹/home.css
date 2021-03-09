@@ -1,0 +1,1005 @@
+header {
+    background-color: white;
+    box-shadow: 0px 0px 20px #ccc;
+    padding-bottom: 10px;
+}
+
+.header-top {
+    width: 100%;
+    background-color: #f8f8f8;
+    /* position: absolute; */
+}
+
+.nav {
+    width: 80%;
+    margin: auto;
+    height: 35px;
+    line-height: 35px;
+}
+
+/* 将 li 标签变成行快标签 */
+.nav ul li {
+    padding: 0px 10px;
+    text-align: center;
+}
+
+.nav a {
+    font-size: 13px;
+    color: #999999;
+}
+
+.nav-left li {
+    float: left;
+}
+
+/* 让装li标签的ul向右浮动 */
+.nav-ulbox {
+    float: right;
+}
+
+.nav-right ul li {
+    float: left;
+    width: 80px;
+    text-align: center;
+    z-index: 9;
+    position: relative;
+}
+/* 给二级菜单栏设置样式 */
+.nav-right .submenu {
+    display: none;
+}
+.nav-has-child:hover{
+    color: #FE8C00;
+    background-color: #fff;
+    border-color: #E5E5E5;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.1);
+    z-index: 100;
+}
+/* 所有二级菜单样式 */
+.submenu{
+    position: absolute;
+    border: 1px solid #E5E5E5;
+    border-top: 0px;
+    background: #fff;
+    text-align: center;
+    z-index: 1000;
+    right: -1px;
+    /* top: 95%; */
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.1);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    /* box-sizing:border-box; CSS3新属性。 padding、border不会加宽加高盒子 */
+    box-sizing: content-box;
+}
+/* 二级菜单栏的【商家中心部分】 */
+.second-nav2{
+    width: 130px;
+}
+.second-nav2 a{
+    display: block;
+    width: 130px;
+    position: relative;
+    left: -10px;
+}
+/* 二级菜单栏的【网站导航部分】  */
+.second-nav3{
+    width: 1000px;
+    height: 300px;
+    z-index: 1000;
+}
+.second-nav3 .nav-second-dl{
+    float: left;
+}
+.second-nav3 .nav-second-dl dt{
+    width: 100%;
+    font: 17px;
+    text-align: center;
+    display: block;
+}
+.second-nav3 .nav-second-dl dd{
+    font-size: 13px;
+}
+/* 网站导航部分 酒店旅舍 */
+.second-nav3 .nav-hotel{
+    width: 280px;
+}
+.second-nav3 .nav-hotel dd{
+    display: block;
+    width: 93px;
+    float: left;
+}
+/* 网站导航部分 吃美食 */
+.second-nav3 .nav-food{
+    width: 180px;
+}
+.second-nav3 .nav-food dd{
+    width: 90px;
+    display: block;
+    float: left;
+}
+/* 网站导航部分 看电影 */
+.second-nav3 .nav-movie{
+    width: 120px;
+}
+/* 网站导航部分 APP应用 */
+.second-nav3 .nav-APP{
+    width: 420px;
+}
+.second-nav3 .nav-APP div{
+    width: 360px;
+    margin: auto;
+    margin-top: 50px;
+}
+.second-nav3 .nav-APP dd{
+    width: 60px;
+    height: 60px;
+    display: block;
+    float: left;
+    padding: 0px 5px;
+}
+.second-nav3 .nav-APP dd img{
+    width: 100%;
+    height: 100%;
+}
+/* 搜索栏部分 */
+.header-search {
+    height: 100px;
+    width: 80%;
+    margin: auto;
+    /* background-color: #999999; */
+}
+
+.header-search div {
+    float: left;
+}
+/* 左边图片logo的大小设置 */
+.header-logo {
+    margin-top: 35px;
+    width: 15%;
+    height: 50px;
+}
+/* 左边图片logo撑满 */
+.header-logo img {
+    width: 100%;
+    height: 100%;
+}
+/* 搜索部分的大小设置 */
+.search-btn {
+    width: 85%;
+    margin: auto;
+    margin-top: 35px;
+}
+/* 搜索文本框 */
+#search-text {
+    width: 40%;
+    height: 36px;
+    line-height: 36px;
+    outline: none;
+    padding-left: 15px;
+    margin-left: 18%;
+    border: 1px solid #ccc;
+}
+/* 搜索按钮 */
+#btn {
+    height: 38px;
+    line-height: 38px;
+    width: 80px;
+    background-color: #ffc300;
+    color: white;
+    font-size: 13px;
+    position: relative;
+    left: -6px;
+    cursor: pointer;
+    border: 0px;
+    outline: none;
+}
+
+#btn:hover {
+    opacity: 0.9;
+}
+
+/* 头部下面的导航栏 */
+.header-menu {
+    width: 100%;
+    margin-top: 30px;
+    padding: 20px 0px;
+}
+
+.header-menu ul {
+    /* width: 50%; */
+    width: 600px;
+    margin: auto;
+}
+
+.header-menu ul li {
+    float: left;
+    padding: 0px 15px;
+}
+
+.header-menu a {
+    font-size: 17px;
+    color: black;
+    font-weight: 600;
+}
+
+/* 广告栏区域 */
+.banner {
+    width: 80%;
+    height: 580px;
+    margin: auto;
+    position: relative;
+}
+/* 侧边导航菜单样式区域 */
+.banner-nav {
+    background: #ffff;
+    position: absolute;
+    height: 540px;
+    width: 19.5%;
+    bottom: 110px;
+    box-shadow: 0 0 15px #ddd;
+    z-index: 1;
+}
+.nav-top-title{
+    margin: 20px 30px;
+}
+.banner-nav-li{
+    height: 25px;
+    line-height: 25px;
+    padding: 2px 0px;
+}
+.banner-nav-li:hover{
+    background: rgba(255,150,0,0.08);
+}
+/* 二级菜单显示 */
+.banner-nav-li:hover .slideNav{
+    display: block;
+}
+.banner-nav-li .nav-txt{
+   color: #000;
+   font-size: 13px;
+   font-weight: 300;
+}
+.banner-nav-li .nav-txt:hover{
+    font-weight: 600;
+}
+.icon-li{
+   margin: 0 10px;
+}
+/* 二级菜单样式区域 */
+.slideNav{
+    width: 600px;
+    height: 460px;
+    box-shadow: 0 0 15px #ddd;
+    background: #fff;
+    position: absolute;
+    left: 100%;
+    z-index: 50;
+    bottom: 0%;
+    display: none;
+}
+.slideNav-item{
+    margin-top: 15px;
+}
+.slideNav-item-title{
+    margin: 0 25px;
+    display: inline-block;
+    font-weight: 500;
+}
+.slideNav-more{
+    margin: 0 30px;
+    float: right;
+}
+.slideNav-item-more{
+    color: #999;
+    font-size: 14px;
+}
+.slideNav-item-lines{
+    width: 90%;
+    margin: 20px 25px;
+}
+.slideNav-item-li{
+   margin-top: -15px;
+   width: 75%;
+   margin-left: 15px;
+}
+.slideNav-item-li-txt{
+   text-decoration: none;
+   color: #999;
+   display: inline-block;
+   margin: 0 5px;
+   font-size: 12px;
+}
+/* banner主体位 */
+.banner-conter {
+    width: 80%;
+    position: absolute;
+    height: 480px;
+    /* border: 1px solid #000; */
+    top: 10px;
+    right: 0px;
+}
+/* banner上部分样式 */
+.banner-conter__top{
+    width: 100%;
+    height: 280px;
+    margin: auto;
+}
+/* 轮播图样式区域 */
+.lun {
+    width: 72%;
+    height: 280px;
+    /* box-shadow: 5px 5px 5px #999; */
+    overflow: hidden;
+}
+/* 鼠标移入显示切换图标 */
+.lun:hover.lun .lun-icon {
+    display: block;
+}
+/* 轮播图片样式 */
+.lun-img {
+    width: 100%;
+    height: 280px;
+}
+
+/* 轮播图片切换按钮样式 */
+.lun .lun-icon {
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    outline: none;
+    border: none;
+    display: none;
+   
+}
+
+/* 轮播图片切换按钮样式2 */
+.lun .lun-bottom-icon {
+    border-style: none;
+    border: none;
+    outline: none;
+    border-radius: 0 0 0 0;
+    width: 20px;
+    height: 3px;
+    margin-left: 10px;
+
+}
+/* 上半部分广告位样式 */
+.bar-top {
+    width: 18%;
+    margin: 0px 10px;
+    overflow: hidden;
+}
+.bar-top img {
+    width: 100%;
+    height: 100%;
+}
+/* 上半部分用户登录注册样式 */
+.user-login {
+    width: 27%;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+.user-login dl{
+    width: 100%;
+    height: 100%;
+}
+/* 登陆注册的头像盒子样式 */
+.user-login dl dt{
+    width: 60px;
+    height: 60px;
+    border: 3px solid #ccc;
+    border-radius: 50%;
+    margin: auto ;
+    margin-top: 15%;
+    overflow: hidden;
+}
+.user-login dl dt #userImage{
+    width: 100%;
+    height: 100%;
+}
+/* 登陆注册用户名的样式 */
+#userName{
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 17px;
+    color: #000;
+}
+/* 登录注册按钮样式 */
+.bar-btn--login{
+    display: block;
+    width: 120px;
+    height: 35px;
+    line-height: 35px;
+    color: #000;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 15px;
+}
+.bar-btn--login:hover{
+    background-color: #f8f8f8;
+}
+/*  banner下半部分样式 */
+.banner-conter__bottom {
+    width: 100%;
+    height: 170px;
+    margin: auto;
+    margin-top: 10px;
+}
+/* 下半部分广告位样式 */
+.bar-bottom--1 {
+    width: 36%;
+}
+.bar-bottom--1 img {
+    width: 100%;
+    height: 100%;
+}
+/* 下半部分广告位样式 */
+.bar-bottom--2 {
+    width: 36%;
+    margin-left: 2px;
+}
+
+.bar-bottom--2 img {
+    width: 100%;
+    height: 100%;
+}
+/* 下半部分广告位样式 */
+.bar-bottom--3 {
+    width: 18%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.bar-bottom--3 img {
+    width: 100%;
+    height: 100%;
+}
+/* 下半部分手机二维码登录样式 */
+.bar-bottom--4 {
+    width: 27%;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+.bar-bottom--4 dl{
+    width: 100%;
+    height: 100%;
+}
+.bar-bottom--4 dl dd{
+    font-size: 17px;
+    font-weight: 500;
+    text-align: center;
+}
+.bar-bottom--4 dl dd span{
+    font-size: 13px;
+}
+.bar-bottom--4 dl dd #bar-span{
+    color: #ff6600;
+}
+.bar-bottom--4 dl dt span{
+    display: block;
+    text-align: center;
+}
+.bar-bottom--4 dl dt img{
+    width: 100px;
+    height: 100px;
+}
+/* 猫眼电影样式 */
+.catMovie {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 猫眼电影标题等样式 */
+.catMovie-nav {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background-color: red;
+    border: 0px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.catMovie-nav .title1 {
+    color: white;
+    font-size: 18px;
+    float: left;
+    margin: 0px 15px;
+}
+
+.catMovie-nav ul li {
+    float: left;
+    padding: 0px 5px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* 猫眼左右按钮 */
+/* 方法一 */
+.fa-chevron-circle-left,.fa-chevron-circle-right{
+    font-size: 30px;
+    position: relative;
+    top: 160px;
+    cursor: pointer;
+    z-index: 99;
+    opacity: 1;
+}
+.fa-chevron-circle-right{
+    float: right;
+}
+/* 方法二 */
+#btn-img1,#btn-img2{
+    width: 35px;
+    height: 35px;
+}
+.catMovie .btn-left,.btn-right{
+    width: 35px;
+    height: 35px;
+    border: 0px;
+    border-radius: 50%;
+    background-color: #999999;
+    opacity: 0.8;
+    cursor: pointer;
+    z-index: 99;
+    /* 想要给btn-left btn-right以catMovie为基准的绝对定位，那么就要先给catMovie一个定位 position: relative; */
+    position: absolute;
+    top: 50%;
+    display: none;
+}
+/* 移入电影部分，显示左右的按钮 */
+.catMovie:hover .btn-left,.catMovie:hover .btn-right{
+    display: block;
+}
+.btn-right {
+    right: 0px;
+}
+/* 电影按钮的伪类 */
+.btn-left:hover,
+.btn-right:hover {
+    opacity: 1;
+}
+
+/* 猫眼电影内容样式 */
+.catMovie-content {
+    width: 2500px;
+    height: 300px;
+    margin-top: 0px;
+}
+/* 放电影的大盒子隐藏 */
+.catMovie-content div {
+    display: none;
+}
+/* 放电影第一个大盒子显示出来 */
+.catMovie-content div:nth-child(1) {
+    display: block;
+}
+/* 放一个电影图片的小盒子样式 */
+.catMovie-content dl {
+    float: left;
+    width: 214px;
+    height: 300px;
+    margin: 0px 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+/* 电影图片的伪类 */
+.catMovie dl:hover {
+    opacity: 0.9;
+    transition: all 0.3s linear 0s;
+}
+
+/* 猫眼电影的描述以及电影评分等背景的样式 */
+.catMovie-content dl dd {
+    height: 100px;
+    /* 这个很重要 :rgba(255,255,255,0.1)  rgb：代表颜色值  a：代表 颜色背景透明度【设置后背景透明，字体不会透明】 */
+    background-color: rgba(20, 20, 20, 0.2);
+    position: relative;
+    top: -100px;
+}
+
+/* 猫眼电影的描述以及电影评分等样式 */
+.catMovie-content--span1 {
+    display: inline-block;
+    width: 100%;
+    height: 20px;
+    font-size: 13px;
+    color: white;
+    padding: 0px 5px;
+    position: relative;
+    top: 30px;
+}
+
+.catMovie-content--span1 span {
+    font-size: 17px;
+    color: #ff6600;
+    padding: 0px 5px;
+}
+
+.catMovie-content--span2 {
+    color: white;
+    font-size: 15px;
+    padding: 0px 5px;
+    position: relative;
+    top: 40px;
+}
+
+.catMovie-content--span3 {
+    display: block;
+    width: 50px;
+    height: 25px;
+    line-height: 25px;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 12px;
+    background-color: #ff6600;
+    float: right;
+    margin-top: 35px;
+    margin-right: 10px;
+}
+/* 设置电影图片的大小 */
+.catMovie-content img {
+    width: 100%;
+    height: 300px;
+}
+
+/* 猫眼电影、推荐公寓全部按钮a标签 字体样式*/
+.allbtn a {
+    float: right;
+    margin-right: 14px;
+    font-size: 15px;
+    color: white;
+}
+
+/* 民宿公寓 */
+.apartment {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: white;
+    overflow: hidden;
+}
+/* 民宿公寓的导航栏的样式 */
+.apartment-nav {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    font-size: 15px;
+    color: white;
+    background-color: #f3be48;
+}
+/* 民宿公寓的标题 */
+.apartment-nav .title2 {
+    color: white;
+    font-size: 18px;
+    float: left;
+    margin: 0px 15px;
+}
+/* 民宿公寓的导航栏内容样式 */
+.apartment-nav ul li {
+    float: left;
+    padding: 0px 5px;
+    cursor: pointer;
+}
+/* 放民宿公寓图片的大盒子 */
+.apartment-address div {
+    /* visibility: hidden; */
+
+    display: none;
+}
+/* 放民宿公寓图片的大盒子第一个盒子显示 */
+.apartment-address div:nth-child(1) {
+    /* visibility: visible; */
+
+    display: block;
+    display: flex;
+}
+
+/* 各个住宿地点图片以及字体的样式 */
+.apartment-tianjin,
+.apartment-jinan,
+.apartment-dalian,
+.apartment-address div {
+    /* 自动换行 */
+    flex-wrap: wrap;
+    justify-content: start;
+}
+/* 设置每行放图片以及字体的小盒子dl的长度，把其他盒子挤下去 */
+.apartment dl {
+    width: 30%;
+    padding: 10px;
+}
+/* 图片以及字体的小盒子的伪类 */
+.apartment dl:hover {
+    opacity: 0.9;
+    transition: all 0.3s linear 0s;
+}
+/* 放图片的dt盒子样式，超出隐藏 */
+.apartment dl dt {
+    width: 100%;
+    height: 235px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+/* 图片盒子dt伪类放大 */
+.apartment dl dt img:hover{
+    transform: scale(1.05);
+    transition: all 0.3s linear 0s;
+}
+/* 文字超出一定长度隐藏 用.....代替 */
+.apartment dl dd {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/* 民宿公寓的文字描述和价格的样式 */
+.apartment__dd-acctive1 {
+    font-size: 17px;
+    color: black;
+    padding: 5px 0px;
+}
+
+.apartment__dd-acctive2 {
+    font-size: 13px;
+    color: #999999;
+}
+
+.apartment__dd-acctive3 {
+    font-size: 18px;
+    color: #ff6600;
+    font-weight: 600;
+    padding: 5px 0px;
+}
+.apartment-active{
+    /* color: #ff6600; */
+    font-size: 18px;
+}
+/* 猜你喜欢 - 美团导航 */
+/* 推荐的店铺以及商品的样式 */
+.box {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+.recommend{
+    width: 100%;
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    overflow: hidden;
+}
+.box-nav {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background: linear-gradient(to right, rgb(88, 174, 221) 2%, rgb(66, 191, 205) 97%) rgb(88, 174, 221);
+}
+.box-nav span{
+    color: white;
+}
+.nav__left {
+    padding: 0px 15px;
+    font-size: 18px;
+}
+.nav__right{
+    font-size: 14px;
+}
+.neirou{
+    width: 100%;
+}
+.neirou dl{
+    margin: 5px 0px;
+    padding: 10px;
+}
+.neirou dl dd img {
+    width: 100%;
+    height: 120px;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+.neirou dl dt{
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.neirou dl dt{
+    color: #000;
+}
+.neirou .font {
+    font-size: 12px;
+    color: #999999;
+}
+
+.neirou .font1 {
+    font-size: 14px;
+    color: #ff6600;
+}
+
+.neirou span {
+    font-size: 20px;
+    color:#ff6600;
+}
+
+.neirou dl:hover {
+    background-color: #f7f5f5;
+}
+
+/* 导航各个城市 */
+.city {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.city span{
+    display: block;
+    padding: 10px 20px;
+}
+.city-style{
+    width: 100%;
+    height: 80px;
+    /* border-bottom: 1px solid #ccc; */
+}
+/* 给城市分类添加下划线 */
+.bottom-border{
+    border-bottom: 1px solid #ccc;
+}
+.city-title{
+    float: left;
+    padding-left: 20px;
+    padding-top: 5px;
+}
+.city-style ul{
+    width: 80%;
+    margin: auto;
+}
+.city-style ul li{
+    float: left;
+    width: 10%;
+    padding: 5px 0px;
+    max-width: 10%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.city-style ul li a{
+    font-size: 13px;
+    color: #353535;
+    /* cursor: pointer; */
+}
+.city-style ul li a:hover{
+    color: #ff6600;
+    transition: all 0.2s linear 0s;
+}
+
+/* 首页尾部 */
+.footer{
+    width: 100%;
+    margin: 0 auto;
+    color: #333;
+    font-size: 12px;
+    line-height: 2;
+    box-sizing: border-box;
+    text-align: left;
+}
+.middle{
+    width: 80%;
+    margin: 0 auto;
+}
+.clearfix::before,.clearfix::after{
+    content: " ";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+.clearfix{
+    /* margin: 20px; */
+    margin: 0 auto;
+}
+.footer .clearfix::after{
+    content: " ";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+.footer-column{
+   float: left;
+    width: 18%;
+}
+dl{
+    padding-bottom: 20px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+}
+.footer dd a,.footer dt a{
+    color: #666;
+    font-size: 12px;
+}
+.footer dd a:hover,.footer dt a:hover{
+    color:  #ff6600;
+    transition: all 0.2s linear 0s;
+}
+.middle-auto{
+    padding: 40px 45px;
+    border-top: 1px solid #E5E5E5;
+    border-bottom: 1px solid #E5E5E5;
+}
+ .footer-copyright{
+    color: #999;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    line-height: 1.6;
+}
+.footer-copyright-left{
+    float: left;
+}
+.footer-copyright-left a{
+    color: #999;
+}
+.footer-copyright-right{
+float: right;
+    text-align: right;
+}
+.imgs{
+    vertical-align: middle;
+}
+.footer-copyright-cert{
+    text-align: left;
+    padding-top: 6px;
+}
+.imgskr{
+    float: left;
+    width: 38px;
+    height: 38px;
+}
+.pss{
+    float: left;
+    line-height: 38px;
+    padding: 0 5px;
+}
+.scy{
+    display: inline-block;
+    overflow: hidden;
+    text-indent: -1000px;
+    height: 38px;
+    background-image: url(../img/footer.png);
+    background-repeat: no-repeat;
+    margin-right: 2px;
+}
+.skr{
+   
+    width: 109px;
+    background-position: 0 -167px;
+}
+.skr2{
+    width: 107px;
+    background-position: 0 -127px;
+}
+.skr3{
+    width: 107px;
+    background-position: 0 -40px;
+
+}

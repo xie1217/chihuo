@@ -1,0 +1,458 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "微软雅黑";
+    font-size: 14px;
+}
+
+.header {
+    width: 100%;
+    height: 210px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.top {
+    height: 130px;
+    background: url(../images/header_bg.png) repeat-y;
+}
+
+.inner {
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.sou {
+    position: absolute;
+    left: 255px;
+    top: 47px;
+}
+
+.sou input {
+    width: 370px;
+    height: 37px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    padding: 0 10px;
+    float: left;
+}
+
+.sou button {
+    float: left;
+    border: 2px solid #fff;
+    background: #a8000f;
+    height: 37px;
+    width: 76px;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+}
+
+.nav li {
+    float: left;
+}
+
+.nav {
+    height: 78px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .2)
+}
+
+.nav li {
+    height: 77px;
+    line-height: 77px;
+}
+
+.nav li a {
+    color: #000;
+    padding: 0 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav li a:hover {
+    color: #f00
+}
+
+.arr {
+    background: url(../images/msj_menuarrow.gif) right center no-repeat;
+}
+
+
+
+/* 我要找菜谱 */
+.navbar-box {
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    z-index: 5;
+    box-shadow: 0 2px 2px rgb(0 0 0 / 20%);
+}
+
+.navbar-box .navbar-box-ul {
+    margin-left: 13%;
+    width: 600px;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    top: 28px;
+
+}
+
+.navbar-box .navbar-box-ul>li {
+    float: left;
+    height: 50px;
+}
+.navbar-box-ul-li span{
+    position: relative;
+    top: -8px;
+}
+.navbar-box .navbar-box-ul-li>a {
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+}
+.navbar-box .navbar-box-ul-li>a:hover{
+    color: red;
+}
+
+/* 二级菜单 */
+
+.navbar-slide {
+    left: 50px;
+    position: absolute;
+    top: 52px;
+    padding: 15px;
+    display: none;
+}
+
+.looktwo:hover .navbar-slide {
+    display: block;
+    background: white;
+    box-shadow: 0px 3px 5px #ccc;
+}
+
+.navbar-slide-top {
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    justify-content: space-evenly;
+}
+
+.navbar-slide h3 {
+    color: red;
+
+}
+
+.navbar-slide-top-ul {
+    width: 900px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar-slide-top-ul a {
+    color: #666;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.navbar-slide-middle {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-slide-middle__item:nth-child(2) {
+    margin-left: 20px;
+}
+
+.navbar-slide-middle__item ul {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.navbar-slide-middle__item li {
+    padding: 0px 5px;
+    cursor: pointer;
+}
+
+.navbar-slide-middle__item a {
+    color: #666;
+    font-size: 13px;
+}
+
+
+
+
+.main {
+    background: #fae8c8;
+}
+
+h1 {
+    text-align: center;
+    padding: 47px 0;
+}
+
+.box {
+    height: 430px;
+    background: #fff;
+}
+
+
+.inner h4 {
+    text-align: left;
+    padding: 20px 0;
+}
+
+.boxs {
+    height: 582px;
+    background: #fff;
+    padding-left: 50px;
+    padding-top: 20px;
+}
+
+.boxs h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.boxs input {
+    width: 600px;
+    height: 30px;
+    padding-left: 5px;
+    outline: none;
+}
+
+.boxs textarea {
+    outline: none;
+}
+
+#right {
+    float: right;
+    border: 2px solid #fff;
+    background: #f0091d;
+    height: 43px;
+    width: 90px;
+    color: #fff;
+    margin-right: 65px;
+    margin-top: 20px;
+}
+
+.textbox {
+    width: 883px;
+}
+
+
+
+.left {
+    float: left;
+    width: 265px;
+    height: 310px;
+    background: #f5f5f5;
+    padding: 40px;
+}
+
+.left li {
+    border: 2px solid #ebebeb;
+    width: 191px;
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    padding-left: 70px;
+    margin-bottom: 10px;
+}
+
+.left li a {
+    color: #333;
+}
+
+.left li a:hover {
+    font-weight: 700;
+}
+
+.right {
+    float: right;
+    width: 575px;
+    padding: 40px;
+}
+
+.right h2 {
+    font-size: 23px;
+    margin-bottom: 60px;
+}
+
+.right h2 span {
+    float: right;
+    font-size: 14px;
+    color: #666;
+}
+
+.right h2 span a {
+    color: red;
+}
+
+.zhuce li {
+    margin-bottom: 28px;
+}
+
+.zhuce input {
+    width: 260px;
+    height: 30px;
+    outline: none;
+    padding-left: 6px;
+    margin-left: 50px;
+    border: 1px solid #ccc;
+}
+
+.zhuce ul li input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-left: 100px;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+
+#left{
+    margin-left: 0px;
+}
+
+.zhuce ul li a {
+    color: #cacacc;
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.zhuce ul li a:hover{
+    color: red;
+}
+
+.zhuce ul li button {
+    width: 70px;
+    height: 33px;
+    background-color: red;
+    color: white;
+    line-height: 30px;
+    text-align: center;
+    border: 0;
+    margin-left: 100px;
+    cursor: pointer;
+}
+
+
+
+
+
+.footer {
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.fl {
+    float: left;
+}
+
+.fl p {
+    color: white;
+    line-height: 30px;
+}
+
+.fl p span {
+    color: red;
+    font-size: 22px;
+}
+
+.fr {
+    float: left;
+    overflow: hidden;
+    margin-left: 85px;
+}
+
+.fr ul li {
+    float: left;
+    margin-right: 15px;
+    margin-top: 30px;
+}
+
+.fr ul li h4 {
+    display: block;
+    width: 105px;
+    height: 23px;
+    background: url(../images/f1.png);
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+    padding-top: 82px;
+    font-weight: 400;
+}
+
+.fr ul li h3 {
+    display: block;
+    width: 105px;
+    height: 23px;
+    background: url(../images/f2.png);
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+    padding-top: 82px;
+    font-weight: 400;
+}
+
+.fr ul li h2 {
+    display: block;
+    width: 105px;
+    height: 105px;
+    background: url(../images/f3.png);
+    margin-bottom: 10px;
+}
+
+.fr ul li h1 {
+    display: block;
+    width: 105px;
+    height: 105px;
+    background: url(../images/f4.png);
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.fr ul li p {
+    width: 105px;
+    font-size: 13px;
+    color: #333;
+    text-align: center;
+}
+
+.fr .mr0 {
+    margin-right: 0;
+}
+
+.foot {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 60px;
+}
+
+.foot a {
+    color: #333;
+    margin: 0 11px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.foot a:hover {
+    color: red;
+}
+
+.foot p {
+    margin-top: 10px;
+}

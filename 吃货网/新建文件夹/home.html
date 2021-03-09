@@ -1,0 +1,2283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美团首页</title>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="./public.css">
+    <link rel="stylesheet" href="./home.css">
+    <!-- 图标库 -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 腾讯地图插件 -->
+    <script type="text/javascript" src="https://mapapi.qq.com/web/mapComponents/geoLocation/v/geolocation.min.js">
+    </script>
+</head>
+
+<body>
+    <header>
+        <!-- 头部导航栏部分 -->
+        <div class="header-top">
+            <div class="nav grid">
+                <div class="nav-left grid-cell--3">
+                    <ul>
+                        <li><a href="#">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <span id="citys"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                切换城市
+                            </a>
+                        </li>
+                        <li><a href="./login.html" id="text-color">立即登录</a></li>
+                        <li><a href="./register.html">注册</a></li>
+                    </ul>
+                    <script>
+                        var geolocation = new qq.maps.Geolocation("CS4BZ-UGNWP-JQRD5-VPHUF-QKUMT-HVBT7", "myapp");
+                        var options = {
+                            timeout: 9000
+                        };
+                        geolocation.getLocation(sucCallback, showErr, options);
+
+                        function sucCallback(position) {
+                            var obj = JSON.parse(JSON.stringify(position, null, 4));
+                            // alert(obj.province + obj.city + obj.district) // 获取省市区
+                            obj.province; //获取省级
+                            document.getElementById('citys').innerHTML = obj.city;
+                            document.getElementById('qu').innerHTML = obj.district;
+                            document.getElementById('addrs').innerHTML = obj.addr;
+                        }
+
+                        function showErr() {
+                            alert("定位失败");
+                        }
+                    </script>
+                </div>
+                <div class="nav-right grid-cell--3">
+                    <ul class="nav-ulbox">
+                        <li class="nav-has-child">
+                            <a href="#">我的美团</a>
+                            <ul class="submenu second-nav1">
+                                <li><a href="#">我的订单</a></li>
+                                <li><a href="./Collection.html">我的收藏</a></li>
+                                <li><a href="#">抵用劵</a></li>
+                                <li><a href="#">账户设置</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">手机APP</a>
+                        </li>
+                        <li class="nav-has-child">
+                            <a href="#">商家中心</a>
+                            <ul class="submenu second-nav2">
+                                <li><a href="#">美国餐饮商户中心</a></li>
+                                <li><a href="#">登录商户中心</a></li>
+                                <li><a href="#">美国智能收银</a></li>
+                                <li><a href="#">我想合作</a></li>
+                                <li><a href="#">手机免费开店</a></li>
+                                <li><a href="#">餐饮代理商招募</a></li>
+                                <li><a href="#">商家申请开票</a></li>
+                                <li><a href="#">免费合作美团排队</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-has-child">
+                            <a href="#">美团规则</a>
+                            <ul class="submenu second-nav1">
+                                <li><a href="#">规则中心</a></li>
+                                <li><a href="#">规则目录</a></li>
+                                <li><a href="#">规则评议院</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-has-child">
+                            <a href="#">网站导航</a>
+                            <ul class="submenu second-nav3">
+                                <div class="second-nav3-box">
+                                    <!-- 网站导航酒店旅游 -->
+                                    <dl class="nav-hotel nav-second-dl">
+                                        <dt>酒店旅游</dt>
+                                        <dd><a href="#">国际机场</a></dd>
+                                        <dd><a href="#">火车票</a></dd>
+                                        <dd><a href="#">民宿</a></dd>
+                                        <dd><a href="#">经济型酒店</a></dd>
+                                        <dd><a href="#">主题酒店</a></dd>
+                                        <dd><a href="#">商务酒店</a></dd>
+                                        <dd><a href="#">公寓</a></dd>
+                                        <dd><a href="#">豪华酒店</a></dd>
+                                        <dd><a href="#">客栈</a></dd>
+                                        <dd><a href="#">青年旅舍</a></dd>
+                                        <dd><a href="#">度假酒店</a></dd>
+                                        <dd><a href="#">别墅</a></dd>
+                                        <dd><a href="#">农家院</a></dd>
+                                    </dl>
+                                    <!-- 网站导航吃美食 -->
+                                    <dl class="nav-food nav-second-dl">
+                                        <dt>吃美食</dt>
+                                        <dd><a href="#">烤鱼</a></dd>
+                                        <dd><a href="#">特色小吃</a></dd>
+                                        <dd><a href="#">烧烤</a></dd>
+                                        <dd><a href="#">自助餐</a></dd>
+                                        <dd><a href="#">火锅</a></dd>
+                                        <dd><a href="#">代金劵</a></dd>
+                                    </dl>
+                                    <!-- 网站导航看电影 -->
+                                    <dl class="nav-movie nav-second-dl">
+                                        <dt>看电影</dt>
+                                        <dd><a href="#">热门电影</a></dd>
+                                        <dd><a href="#">热门影院</a></dd>
+                                        <dd><a href="#">热门电影口碑榜</a></dd>
+                                        <dd><a href="#">最受欢迎电影</a></dd>
+                                        <dd><a href="#">国内票房榜</a></dd>
+                                        <dd><a href="#">北美票房榜</a></dd>
+                                        <dd><a href="#">电影排行榜</a></dd>
+                                    </dl>
+                                    <!-- 网站导航APP应用 -->
+                                    <dl class="nav-APP nav-second-dl">
+                                        <dt>手机应用</dt>
+                                        <div>
+                                            <dd><a href="./App-memtuan.html"><img src="./img/APP-meituan.png" alt=""></a></dd>
+                                            <dd><a href="#"><img src="./img/APP-waimai.png" alt=""></a></dd>
+                                            <dd><a href="#"><img
+                                                        src="./img/APP-162c3308d9622f6d9cfaa49e60be4dca8573.png"
+                                                        alt=""></a></dd>
+                                            <dd><a href="#"><img src="./img/APP-dianping.png" alt=""></a></dd>
+                                            <dd><a href="#"><img src="./img/APP-maoyan.png" alt=""></a></dd>
+                                        </div>
+
+                                    </dl>
+                                </div>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 头部搜索栏部分 -->
+        <div class="header-search">
+            <div class="header-logo">
+                <img src="./img/logo.png" alt="#">
+            </div>
+            <div class="search-btn">
+                <input type="text" name="" placeholder="搜索商家或地点" id="search-text">
+                <input type="button" value="搜索" id="btn">
+            </div>
+        </div>
+
+        <!-- 头部下面的导航栏 -->
+        <div class="header-menu">
+            <ul>
+                <li class="grid-cell--1"><a href="./nav-meituan.html">美团外卖</a></li>
+                <li class="grid-cell--1"><a href="#">猫眼电影</a></li>
+                <li class="grid-cell--1"><a href="#">美团酒店</a></li>
+                <li class="grid-cell--1"><a href="#">民宿/公寓</a></li>
+                <li class="grid-cell--1"><a href="./nav-shangjiaruzhu.html">商家入驻</a></li>
+                <li class="grid-cell--1"><a href="#">美团公益</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 广告栏区域 -->
+    <div class="banner">
+        <!-- 侧边菜单 -->
+        <div class="banner-nav">
+            <h3 class="nav-top-title">全部分类</h3>
+            <ul class="banner-nav-ul">
+                <li class="banner-nav-li">
+                    <img src="./img/food.png" alt="" class="icon-li">
+                    <a class="nav-txt" href="#">美食</a>
+                    <div class="slideNav">
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">美食</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">代金券</a>
+                                    <a href="#" class="slideNav-item-li-txt">甜品饮品</a>
+                                    <a href="#" class="slideNav-item-li-txt">火锅</a>
+                                    <a href="#" class="slideNav-item-li-txt">自助餐</a>
+                                    <a href="#" class="slideNav-item-li-txt">小吃快餐</a>
+                                    <a href="#" class="slideNav-item-li-txt">日韩料理</a>
+                                    <a href="#" class="slideNav-item-li-txt">西餐</a>
+                                    <a href="#" class="slideNav-item-li-txt">聚餐宴请</a>
+                                    <a href="#" class="slideNav-item-li-txt">烧烤烤肉</a>
+                                    <a href="#" class="slideNav-item-li-txt">东北菜</a>
+                                    <a href="#" class="slideNav-item-li-txt">江浙菜</a>
+                                    <a href="#" class="slideNav-item-li-txt">香锅烤鱼</a>
+                                    <a href="#" class="slideNav-item-li-txt">粤港菜</a>
+                                    <a href="#" class="slideNav-item-li-txt">中式烧烤/烤串</a>
+                                    <a href="#" class="slideNav-item-li-txt">西北菜</a>
+                                    <a href="#" class="slideNav-item-li-txt">咖啡酒吧菜馆</a>
+                                    <a href="#" class="slideNav-item-li-txt">云贵菜</a>
+                                    <a href="#" class="slideNav-item-li-txt">东南亚菜</a>
+                                    <a href="#" class="slideNav-item-li-txt">海鲜</a>
+                                    <a href="#" class="slideNav-item-li-txt">台湾/客家菜</a>
+                                    <a href="#" class="slideNav-item-li-txt">创意菜</a>
+                                    <a href="#" class="slideNav-item-li-txt">汤/粥/炖菜</a>
+                                    <a href="#" class="slideNav-item-li-txt">蒙餐</a>
+                                    <a href="#" class="slideNav-item-li-txt">新疆菜</a>
+                                    <a href="#" class="slideNav-item-li-txt">其他美食</a>
+                                    <a href="#" class="slideNav-item-li-txt">京菜鲁菜</a>
+                                </li>
+                            </ol>
+
+                        </div>
+                    </div>
+                </li>
+                <li class="banner-nav-li">
+                    <img src="./img/美团.png" alt="" class="icon-li">
+                    <a class="nav-txt" href="#">外卖</a>
+                    <div class="slideNav">
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">外卖</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">
+                                        美团外卖
+                                    </a>
+                                </li>
+                            </ol>
+
+                        </div>
+                    </div>
+                </li>
+                <li class="banner-nav-li">
+                    <img src="./img/hotel.png" alt="" class="icon-li">
+                    <a class="nav-txt" href="#">酒店</a>
+                    <div class="slideNav">
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">酒店星级</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">经济型</a>
+                                    <a href="#" class="slideNav-item-li-txt">舒适/三星</a>
+                                    <a href="#" class="slideNav-item-li-txt">高档/四星</a>
+                                    <a href="#" class="slideNav-item-li-txt">豪华/五星</a>
+                                </li>
+                            </ol>
+
+                        </div>
+                    </div>
+                </li>
+                <li class="banner-nav-li">
+                    <img src="./img/民宿.png" alt="" class="icon-li">
+                    <a class="nav-txt" href="#">民宿</a>
+                    <div class="slideNav">
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">民宿</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">上海</a>
+                                    <a href="#" class="slideNav-item-li-txt">成都</a>
+                                    <a href="#" class="slideNav-item-li-txt">北京</a>
+                                    <a href="#" class="slideNav-item-li-txt">重庆</a>
+                                    <a href="#" class="slideNav-item-li-txt">南京</a>
+                                    <a href="#" class="slideNav-item-li-txt">杭州</a>
+                                    <a href="#" class="slideNav-item-li-txt">广州</a>
+                                    <a href="#" class="slideNav-item-li-txt">西安</a>
+                                    <a href="#" class="slideNav-item-li-txt">武汉</a>
+                                    <a href="#" class="slideNav-item-li-txt">厦门</a>
+                                    <a href="#" class="slideNav-item-li-txt">长沙</a>
+                                    <a href="#" class="slideNav-item-li-txt">青岛</a>
+                                    <a href="#" class="slideNav-item-li-txt">深圳</a>
+                                    <a href="#" class="slideNav-item-li-txt">天津</a>
+                                    <a href="#" class="slideNav-item-li-txt">苏州</a>
+                                </li>
+                            </ol>
+
+                        </div>
+                    </div>
+                </li>
+                <li class="banner-nav-li">
+                    <img src="./img/猫眼new.png" alt="" class="icon-li">
+                    <a class="nav-txt" href="#">猫眼电影</a>
+                    <div class="slideNav">
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">热映电影</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">送你一朵小红花</a>
+                                    <a href="#" class="slideNav-item-li-txt">许愿神龙</a>
+                                    <a href="#" class="slideNav-item-li-txt">拆弹专家2</a>
+                                    <a href="#" class="slideNav-item-li-txt">大红包</a>
+                                    <a href="#" class="slideNav-item-li-txt">缉魂</a>
+                                    <a href="#" class="slideNav-item-li-txt">心灵奇旅</a>
+                                    <a href="#" class="slideNav-item-li-txt">温暖的抱抱</a>
+                                    <a href="#" class="slideNav-item-li-txt">武汉日夜</a>
+                                    <a href="#" class="slideNav-item-li-txt">紧急救援</a>
+                                    <a href="#" class="slideNav-item-li-txt">海底小纵队：火焰之环</a>
+                                </li>
+                            </ol>
+
+                        </div>
+                    </div>
+                </li>
+                <li class="banner-nav-li">
+                    <img src="./img/火车.png" alt="" class="icon-li">
+                    <a class="nav-txt" href="#">机票/</a>
+                    <a class="nav-txt" href="#">火车票</a>
+                    <div class="slideNav">
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">机票</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">国内机票</a>
+                                    <a href="#" class="slideNav-item-li-txt">国际/港澳台机票</a>
+                                </li>
+                            </ol>
+
+                        </div>
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">火车票</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">火车票</a>
+                                </li>
+                            </ol>
+
+                        </div>
+                    </div>
+                </li>
+                <li class="banner-nav-li">
+                    <img src="./img/ktv.png" alt="" class="icon-li">
+                    <a class="nav-txt" href="#">休闲娱乐/</a>
+                    <a class="nav-txt" href="#">KTV</a>
+                    <div class="slideNav">
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">休闲娱乐</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">足疗按摩</a>
+                                    <a href="#" class="slideNav-item-li-txt">洗浴/汗蒸</a>
+                                    <a href="#" class="slideNav-item-li-txt">酒吧</a>
+                                    <a href="#" class="slideNav-item-li-txt">密室逃脱</a>
+                                    <a href="#" class="slideNav-item-li-txt">轰趴馆</a>
+                                    <a href="#" class="slideNav-item-li-txt">茶馆</a>
+                                    <a href="#" class="slideNav-item-li-txt">私人影院</a>
+                                    <a href="#" class="slideNav-item-li-txt">DIY手工馆</a>
+                                    <a href="#" class="slideNav-item-li-txt">采摘/农家乐</a>
+                                    <a href="#" class="slideNav-item-li-txt">网吧/网咖</a>
+                                    <a href="#" class="slideNav-item-li-txt">游乐游艺</a>
+                                    <a href="#" class="slideNav-item-li-txt">VR</a>
+                                    <a href="#" class="slideNav-item-li-txt">桌面游戏</a>
+                                    <a href="#" class="slideNav-item-li-txt">真人cs</a>
+                                    <a href="#" class="slideNav-item-li-txt">棋牌室</a>
+                                    <a href="#" class="slideNav-item-li-txt">其他玩乐</a>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">KTV</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">KTV</a>
+                                </li>
+                            </ol>
+
+                        </div>
+                    </div>
+                </li>
+                <li class="banner-nav-li">
+                    <img src="./img/房子.png" alt="" class="icon-li">
+                    <a class="nav-txt" href="#">生活服务</a>
+                    <div class="slideNav">
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">生活服务</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">衣物/皮具洗护</a>
+                                    <a href="#" class="slideNav-item-li-txt">家政</a>
+                                    <a href="#" class="slideNav-item-li-txt">搬运运输</a>
+                                    <a href="#" class="slideNav-item-li-txt">送水</a>
+                                    <a href="#" class="slideNav-item-li-txt">充值缴费</a>
+                                    <a href="#" class="slideNav-item-li-txt">服饰/鞋包养护</a>
+                                    <a href="#" class="slideNav-item-li-txt">开锁换锁</a>
+                                    <a href="#" class="slideNav-item-li-txt">居家维修</a>
+                                    <a href="#" class="slideNav-item-li-txt">管道疏通</a>
+                                    <a href="#" class="slideNav-item-li-txt">家电维修清洗</a>
+                                    <a href="#" class="slideNav-item-li-txt">电脑维修</a>
+                                    <a href="#" class="slideNav-item-li-txt">手机维修</a>
+                                    <a href="#" class="slideNav-item-li-txt">证件照/肖像摄影</a>
+                                    <a href="#" class="slideNav-item-li-txt">照片冲洗/图文文印</a>
+                                    <a href="#" class="slideNav-item-li-txt">商务服务/法律服务</a>
+                                    <a href="#" class="slideNav-item-li-txt">文化传媒机构</a>
+                                    <a href="#" class="slideNav-item-li-txt">成人用品/情趣用品</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+                <li class="banner-nav-li">
+                    <img src="./img/丽人.png" alt="" class="icon-li">
+                    <a class="nav-txt" href="#">丽人/</a>
+                    <a class="nav-txt" href="#">美发/</a>
+                    <a class="nav-txt" href="#">医疗美容</a>
+                    <div class="slideNav">
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">丽人</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">美发</a>
+                                    <a href="#" class="slideNav-item-li-txt">美甲美睫</a>
+                                    <a href="#" class="slideNav-item-li-txt">美容美体</a>
+                                    <a href="#" class="slideNav-item-li-txt">医疗美容</a>
+                                    <a href="#" class="slideNav-item-li-txt">瑜伽舞蹈</a>
+                                    <a href="#" class="slideNav-item-li-txt">廋体纤体</a>
+                                    <a href="#" class="slideNav-item-li-txt">韩式定妆</a>
+                                    <a href="#" class="slideNav-item-li-txt">祛痘</a>
+                                    <a href="#" class="slideNav-item-li-txt">纹身</a>
+                                    <a href="#" class="slideNav-item-li-txt">化妆品</a>
+                                    <a href="#" class="slideNav-item-li-txt">养发</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+                <li class="banner-nav-li">
+                    <img src="./img/钻石.png" alt="" class="icon-li">
+                    <a class="nav-txt" href="#">结婚/</a>
+                    <a class="nav-txt" href="#">婚纱摄影/</a>
+                    <a class="nav-txt" href="#">婚宴</a>
+                    <div class="slideNav">
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">结婚</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">婚纱摄影</a>
+                                    <a href="#" class="slideNav-item-li-txt">旅拍</a>
+                                    <a href="#" class="slideNav-item-li-txt">个性写真</a>
+                                    <a href="#" class="slideNav-item-li-txt">婚宴</a>
+                                    <a href="#" class="slideNav-item-li-txt">婚庆公司</a>
+                                    <a href="#" class="slideNav-item-li-txt">婚纱礼服</a>
+                                    <a href="#" class="slideNav-item-li-txt">西装定制</a>
+                                    <a href="#" class="slideNav-item-li-txt">婚戒首饰</a>
+                                    <a href="#" class="slideNav-item-li-txt">婚车租赁</a>
+                                    <a href="#" class="slideNav-item-li-txt">司仪主持</a>
+                                    <a href="#" class="slideNav-item-li-txt">彩妆造型</a>
+                                    <a href="#" class="slideNav-item-li-txt">婚纱跟拍</a>
+                                    <a href="#" class="slideNav-item-li-txt">婚礼小品</a>
+                                    <a href="#" class="slideNav-item-li-txt">更多婚礼服务</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+                <li class="banner-nav-li">
+                    <img src="./img/亲子.png" alt="" class="icon-li">
+                    <a class="nav-txt" href="#">亲子/</a>
+                    <a class="nav-txt" href="#">儿童乐园/</a>
+                    <a class="nav-txt" href="#">幼教</a>
+                    <div class="slideNav">
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">儿童乐园</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">婴儿游泳</a>
+                                    <a href="#" class="slideNav-item-li-txt">其他亲子游乐</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">幼儿教育</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">早教中心</a>
+                                    <a href="#" class="slideNav-item-li-txt">少儿英语</a>
+                                    <a href="#" class="slideNav-item-li-txt">智力开发</a>
+                                    <a href="#" class="slideNav-item-li-txt">托班/幼儿园</a>
+                                    <a href="#" class="slideNav-item-li-txt">幼儿教育</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">亲子摄影</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">儿童摄影</a>
+                                    <a href="#" class="slideNav-item-li-txt">孕妇写真</a>
+                                    <a href="#" class="slideNav-item-li-txt">上门拍</a>
+                                    <a href="#" class="slideNav-item-li-txt">其他亲子摄影</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">孕妇护理</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">月子会所</a>
+                                    <a href="#" class="slideNav-item-li-txt">产后护理</a>
+                                    <a href="#" class="slideNav-item-li-txt">妇幼医院</a>
+                                    <a href="#" class="slideNav-item-li-txt">孕妇用品</a>
+                                    <a href="#" class="slideNav-item-li-txt">开奶催乳</a>
+                                    <a href="#" class="slideNav-item-li-txt">月嫂</a>
+                                    <a href="#" class="slideNav-item-li-txt">亲子购物</a>
+                                    <a href="#" class="slideNav-item-li-txt">宝宝派对</a>
+                                    <a href="#" class="slideNav-item-li-txt">亲子服务</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+                <li class="banner-nav-li">
+                    <img src="./img/哑铃.png" alt="" class="icon-li">
+                    <a class="nav-txt" href="#">运动健身/</a>
+                    <a class="nav-txt" href="#">健身中心</a>
+                    <div class="slideNav">
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">运动健身</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">健身中心</a>
+                                    <a href="#" class="slideNav-item-li-txt">武术场馆</a>
+                                    <a href="#" class="slideNav-item-li-txt">游泳馆</a>
+                                    <a href="#" class="slideNav-item-li-txt">羽毛球馆</a>
+                                    <a href="#" class="slideNav-item-li-txt">溜冰馆</a>
+                                    <a href="#" class="slideNav-item-li-txt">射箭馆</a>
+                                    <a href="#" class="slideNav-item-li-txt">篮球场</a>
+                                    <a href="#" class="slideNav-item-li-txt">网球馆</a>
+                                    <a href="#" class="slideNav-item-li-txt">台球馆</a>
+                                    <a href="#" class="slideNav-item-li-txt">乒乓球</a>
+                                    <a href="#" class="slideNav-item-li-txt">足球场</a>
+                                    <a href="#" class="slideNav-item-li-txt">高尔夫场</a>
+                                    <a href="#" class="slideNav-item-li-txt">保龄球馆</a>
+                                    <a href="#" class="slideNav-item-li-txt">体育场馆</a>
+                                    <a href="#" class="slideNav-item-li-txt">马术场</a>
+                                    <a href="#" class="slideNav-item-li-txt">壁球馆</a>
+                                    <a href="#" class="slideNav-item-li-txt">更多运动</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+                <li class="banner-nav-li">
+                    <img src="./img/家装.png" alt="" class="icon-li">
+                    <a class="nav-txt" href="#">家装/</a>
+                    <a class="nav-txt" href="#">建材/</a>
+                    <a class="nav-txt" href="#">家居</a>
+                    <div class="slideNav">
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">装修设计</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">半包装修</a>
+                                    <a href="#" class="slideNav-item-li-txt">全包装修</a>
+                                    <a href="#" class="slideNav-item-li-txt">清洁装修</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">装修建材</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">地板</a>
+                                    <a href="#" class="slideNav-item-li-txt">瓷砖石材</a>
+                                    <a href="#" class="slideNav-item-li-txt">橱柜</a>
+                                    <a href="#" class="slideNav-item-li-txt">灯饰照明</a>
+                                    <a href="#" class="slideNav-item-li-txt">厨卫洁具</a>
+                                    <a href="#" class="slideNav-item-li-txt">油漆涂料</a>
+                                    <a href="#" class="slideNav-item-li-txt">集成吊顶</a>
+                                    <a href="#" class="slideNav-item-li-txt">墙纸墙艺</a>
+                                    <a href="#" class="slideNav-item-li-txt">门窗</a>
+                                    <a href="#" class="slideNav-item-li-txt">木板板材</a>
+                                    <a href="#" class="slideNav-item-li-txt">家用五金</a>
+                                    <a href="#" class="slideNav-item-li-txt">电工电料</a>
+                                    <a href="#" class="slideNav-item-li-txt">楼梯</a>
+                                    <a href="#" class="slideNav-item-li-txt">管材管件</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">家具家居</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">家具</a>
+                                    <a href="#" class="slideNav-item-li-txt">床上用品/家纺</a>
+                                    <a href="#" class="slideNav-item-li-txt">家居饰品</a>
+                                    <a href="#" class="slideNav-item-li-txt">厨具餐具</a>
+                                    <a href="#" class="slideNav-item-li-txt">智能家居</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">家装卖场</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">建材卖场</a>
+                                    <a href="#" class="slideNav-item-li-txt">家居卖场</a>
+                                    <a href="#" class="slideNav-item-li-txt">灯饰卖场</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+                <li class="banner-nav-li">
+                    <img src="./img/纸卷.png" alt="" class="icon-li">
+                    <a class="nav-txt" href="#">学习培训/</a>
+                    <a class="nav-txt" href="#">音乐培训</a>
+                    <div class="slideNav">
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">音乐培训</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">钢琴</a>
+                                    <a href="#" class="slideNav-item-li-txt">吉他</a>
+                                    <a href="#" class="slideNav-item-li-txt">小提琴</a>
+                                    <a href="#" class="slideNav-item-li-txt">古筝</a>
+                                    <a href="#" class="slideNav-item-li-txt">架子鼓</a>
+                                    <a href="#" class="slideNav-item-li-txt">声乐</a>
+                                    <a href="#" class="slideNav-item-li-txt">其他音乐培训</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">职业技术</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">美容化妆</a>
+                                    <a href="#" class="slideNav-item-li-txt">会计</a>
+                                    <a href="#" class="slideNav-item-li-txt">IT</a>
+                                    <a href="#" class="slideNav-item-li-txt">管理培训</a>
+                                    <a href="#" class="slideNav-item-li-txt">摄影培训</a>
+                                    <a href="#" class="slideNav-item-li-txt">司法考试</a>
+                                    <a href="#" class="slideNav-item-li-txt">公务员培训</a>
+                                    <a href="#" class="slideNav-item-li-txt">其他职业培训</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">外语培训</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">英语</a>
+                                    <a href="#" class="slideNav-item-li-txt">日语</a>
+                                    <a href="#" class="slideNav-item-li-txt">韩语</a>
+                                    <a href="#" class="slideNav-item-li-txt">法语</a>
+                                    <a href="#" class="slideNav-item-li-txt">德语</a>
+                                    <a href="#" class="slideNav-item-li-txt">汉语</a>
+                                    <a href="#" class="slideNav-item-li-txt">俄语</a>
+                                    <a href="#" class="slideNav-item-li-txt">西班牙语</a>
+                                    <a href="#" class="slideNav-item-li-txt">其他外语</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">美术培训</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+                                    <a href="#" class="slideNav-item-li-txt">绘画</a>
+                                    <a href="#" class="slideNav-item-li-txt">书法</a>
+                                    <a href="#" class="slideNav-item-li-txt">其他美术</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+                <li class="banner-nav-li">
+                    <img src="./img/医疗.png" alt="" class="icon-li">
+                    <a class="nav-txt" href="#">医疗健康/</a>
+                    <a class="nav-txt" href="#">宠物/</a>
+                    <a class="nav-txt" href="#">爱车</a>
+                    <div class="slideNav">
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">医疗健康</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+
+                                    <a href="#" class="slideNav-item-li-txt">医院</a>
+                                    <a href="#" class="slideNav-item-li-txt">齿科口腔</a>
+                                    <a href="#" class="slideNav-item-li-txt">体验中心</a>
+                                    <a href="#" class="slideNav-item-li-txt">药店</a>
+                                    <a href="#" class="slideNav-item-li-txt">中医</a>
+                                    <a href="#" class="slideNav-item-li-txt">其他健康服务</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">爱车</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+
+                                    <a href="#" class="slideNav-item-li-txt">洗车</a>
+                                    <a href="#" class="slideNav-item-li-txt">租车</a>
+                                    <a href="#" class="slideNav-item-li-txt">加油站</a>
+                                    <a href="#" class="slideNav-item-li-txt">维修保养</a>
+                                    <a href="#" class="slideNav-item-li-txt">驾校</a>
+                                    <a href="#" class="slideNav-item-li-txt">汽车美容</a>
+                                    <a href="#" class="slideNav-item-li-txt">陪练</a>
+                                    <a href="#" class="slideNav-item-li-txt">汽车用品</a>
+                                    <a href="#" class="slideNav-item-li-txt">停车场</a>
+                                    <a href="#" class="slideNav-item-li-txt">汽车保险</a>
+                                    <a href="#" class="slideNav-item-li-txt">4s店/汽车销售</a>
+                                    <a href="#" class="slideNav-item-li-txt">更多汽车服务</a>
+                                    <a href="#" class="slideNav-item-li-txt">机油保养</a>
+                                    <a href="#" class="slideNav-item-li-txt">汽车报价</a>
+                                    <a href="#" class="slideNav-item-li-txt">二手车</a>
+                                    <a href="#" class="slideNav-item-li-txt">广告驾校</a>
+                                    <a href="#" class="slideNav-item-li-txt">交警队</a>
+                                    <a href="#" class="slideNav-item-li-txt">汽车改装</a>
+                                    <a href="#" class="slideNav-item-li-txt">汽车配件</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">宠物</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+
+                                    <a href="#" class="slideNav-item-li-txt">宠物店</a>
+                                    <a href="#" class="slideNav-item-li-txt">宠物医院</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+                <li class="banner-nav-li">
+                    <img src="./img/酒吧.png" alt="" class="icon-li">
+                    <a class="nav-txt" href="#">酒吧/</a>
+                    <a class="nav-txt" href="#">密室逃脱</a>
+                    <div class="slideNav">
+                        <div class="slideNav-item">
+                            <h4 class="slideNav-item-title">玩乐</h4>
+                            <div class="slideNav-more">
+                                <a href="#" class="slideNav-item-more">更多</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </div>
+                            <hr class="slideNav-item-lines">
+                            <ol class="slideNav-item-ul">
+                                <li class="slideNav-item-li">
+
+                                    
+                                    <a href="#" class="slideNav-item-li-txt">KTV</a>
+                                    <a href="#" class="slideNav-item-li-txt">酒吧</a>
+                                    <a href="#" class="slideNav-item-li-txt">密室逃脱</a>
+                                    <a href="#" class="slideNav-item-li-txt">游乐游艺</a>
+                                    <a href="#" class="slideNav-item-li-txt">网吧网咖</a>
+                                    <a href="#" class="slideNav-item-li-txt">私人影院</a>
+                                    <a href="#" class="slideNav-item-li-txt">DIV手工坊</a>
+                                    <a href="#" class="slideNav-item-li-txt">桌面游戏</a>
+                                    <a href="#" class="slideNav-item-li-txt">采摘/农家乐</a>
+                                    <a href="#" class="slideNav-item-li-txt">棋牌室</a>
+                                    <a href="#" class="slideNav-item-li-txt">轰趴馆</a>
+                                    <a href="#" class="slideNav-item-li-txt">真人cs</a>
+                                    <a href="#" class="slideNav-item-li-txt">VR</a>
+                                    <a href="#" class="slideNav-item-li-txt">其他玩乐</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- banner主体 -->
+        <div class="banner-conter">
+            <!-- banner上半部位 -->
+            <div class="banner-conter__top grid">
+                <!-- 轮播图插件样式引入 -->
+                <link rel="stylesheet" href="./libs/glide/glide.core.min.css">
+                <link rel="stylesheet" href="./libs/glide/glide.theme.min.css">
+                <script src="./libs/glide/glide.min.js"></script>
+                <!-- 轮播图 -->
+                <div class="lun grid-cell--8">
+                    <div class="glide">
+                        <div class="glide__track" data-glide-el="track">
+                            <ul class="glide__slides">
+
+                                <!--glide__slide放轮播图片的地方  -->
+                                <li class="glide__slide">
+                                    <a href="#">
+                                        <img src="./img/lunbo-1.jpg" alt="" class="lun-img">
+                                    </a>
+                                </li>
+                                <li class="glide__slide">
+                                    <a href="#">
+                                        <img src="./img/lunbo-2.jpg" alt="" class="lun-img">
+                                    </a>
+                                </li>
+                                <li class="glide__slide">
+                                    <a href="#">
+                                        <img src="./img/lunbo-3.jpg" alt="" class="lun-img">
+                                    </a>
+                                </li>
+                                <li class="glide__slide">
+                                    <a href="#">
+                                        <img src="./img/lunbo-4.jpg" alt="" class="lun-img">
+                                    </a>
+                                </li>
+                                <li class="glide__slide">
+                                    <a href="#">
+                                        <img src="./img/lunbo-5.png" alt="" class="lun-img">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 轮播图切换按钮样式 -->
+                        <div class="glide__arrows" data-glide-el="controls">
+                            <button class="glide__arrow glide__arrow--left lun-icon" data-glide-dir="<">
+                                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                            </button>
+                            <button class="glide__arrow glide__arrow--right lun-icon" data-glide-dir=">">
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <!-- 轮播图小方格按钮样式 -->
+                        <div class="glide__bullets" data-glide-el="controls[nav]">
+                            <button class="glide__bullet lun-bottom-icon" data-glide-dir="=0"></button>
+                            <button class="glide__bullet lun-bottom-icon" data-glide-dir="=1"></button>
+                            <button class="glide__bullet lun-bottom-icon" data-glide-dir="=2"></button>
+                            <button class="glide__bullet lun-bottom-icon" data-glide-dir="=3"></button>
+                            <button class="glide__bullet lun-bottom-icon" data-glide-dir="=4"></button>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    var glide = new Glide('.glide', {
+
+                        hoverpause: true, //鼠标移入轮播图暂停
+                        autoplay: 2000, //轮播图播放时间
+                        gap: 0
+                    });
+                    glide.mount();
+                </script>
+                <!-- 广告位区域 -->
+                <div class="bar-top grid-cell--2">
+                    <a href="#">
+                        <img src="./img/banner-a.png" alt="">
+                    </a>
+                </div>
+                <!-- 用户登录注册区域 -->
+                <div class="user-login grid-cell--3">
+                    <dl>
+                        <dt>
+                            <a href="#">
+                                <img src="./img/avatar.jpg" alt="" id="userImage">
+                            </a>
+                        </dt>
+                        <dd id="userName">Hi！你好</dd>
+                        <dd><a href="./register.html" class="bar-btn--login">注册</a> </dd>
+                        <dd><a href="./login.html" class="bar-btn--login">登录</a> </dd>
+                    </dl>
+                </div>
+            </div>
+
+            <!-- banner下半部分 -->
+            <div class="banner-conter__bottom grid">
+                <!-- 广告位 -->
+                <div class="bar-bottom--1 grid-cell--4">
+                    <a href="#">
+                        <img src="./img/banner-1.png" alt="">
+                    </a>
+                </div>
+                <!-- 广告位 -->
+                <div class="bar-bottom--2 grid-cell--4">
+                    <a href="#">
+                        <img src="./img/banner-2.jpg" alt="">
+                    </a>
+                </div>
+                <!-- 广告位 -->
+                <div class="bar-bottom--3 grid-cell--2">
+                    <a href="#">
+                        <img src="./img/banner-3.jpg" alt="">
+                    </a>
+                </div>
+                <!-- 手机二维码登录区域 -->
+                <div class="bar-bottom--4 grid-cell--3">
+                    <dl>
+                        <dt>
+                            <span><img src="./img/download-qr.png" alt=""></span>
+                        </dt>
+                        <dd>美团APP手机版</dd>
+                        <dd><span id="bar-span">一元起</span><span> 吃喝玩乐</span></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <!-- 猫眼电影 -->
+        <div class="catMovie">
+            <div class="catMovie-nav">
+                <span class="title1">猫眼电影</span>
+                <ul>
+                    <li>正在热映</li>
+                    <li>即将上映</li>
+                </ul>
+                <span class="allbtn"><a href="#">全部></a></span>
+            </div>
+            <!-- 猫眼电影按钮 -->
+            <!-- <i class="fa fa-chevron-circle-left fa-3"  aria-hidden="true"></i> -->
+            <!-- <i class="fa fa-chevron-circle-right fa-3" aria-hidden="true"></i>  -->
+            <div class="btn-left">
+                <img src="./img/左.png" alt="" id="btn-img1">
+            </div>
+            <div class="btn-right">
+                <img src="./img/右.png" alt="" id="btn-img2">
+            </div>
+
+            <div class="catMovie-content">
+                <!-- 正在热映 -->
+                <div>
+                    <dl>
+                        <a href="#">
+                            <dt>
+                                <img src="./img/movie-1.jpg" alt="#">
+                            </dt>
+                            <dd>
+                                <span class="catMovie-content--span1">观众评<span>9.3</span></span>
+                                <span class="catMovie-content--span2">送你一朵小红花</span>
+                                <span class="catMovie-content--span3">购票</span>
+                            </dd>
+                        </a>
+                    </dl>
+                    <dl>
+                        <a href="#">
+                            <dt>
+                                <img src="./img/movie-2.jpg" alt="#">
+                            <dd>
+                                <span class="catMovie-content--span1">观众评<span>9.4</span></span>
+                                <span class="catMovie-content--span2">温暖的抱抱</span>
+                                <span class="catMovie-content--span3">购票</span>
+                            </dd>
+                            </dt>
+                        </a>
+                    </dl>
+                    <dl>
+                        <a href="#">
+                            <dt>
+                                <img src="./img/movie-3.jpg" alt="#">
+                            <dd>
+                                <span class="catMovie-content--span1">观众评<span>9.5</span></span>
+                                <span class="catMovie-content--span2">拆弹专家</span>
+                                <span class="catMovie-content--span3">购票</span>
+                            </dd>
+                            </dt>
+                        </a>
+                    </dl>
+                    <dl>
+                        <a href="#">
+                            <dt>
+                                <img src="./img/movie-4.jpg" alt="#">
+                            <dd>
+                                <span class="catMovie-content--span1">观众评<span>9.3</span></span>
+                                <span class="catMovie-content--span2">心灵奇旅</span>
+                                <span class="catMovie-content--span3">购票</span>
+                            </dd>
+                            </dt>
+                        </a>
+                    </dl>
+                    <dl>
+                        <a href="#">
+                            <dt>
+                                <img src="./img/movie-5.jpg" alt="#">
+                            <dd>
+                                <span class="catMovie-content--span1">观众评<span>9.3</span></span>
+                                <span class="catMovie-content--span2">海底小纵队</span>
+                                <span class="catMovie-content--span3">购票</span>
+                            </dd>
+                            </dt>
+                        </a>
+                    </dl>
+                    <dl>
+                        <a href="#">
+                            <dt>
+                                <img src="./img/movie-6.jpg" alt="#">
+                            <dd>
+                                <span class="catMovie-content--span1">观众评<span>9.4</span></span>
+                                <span class="catMovie-content--span2">紧急救援</span>
+                                <span class="catMovie-content--span3">购票</span>
+                            </dd>
+                            </dt>
+                        </a>
+                    </dl>
+                    <dl>
+                        <a href="#">
+                            <dt>
+                                <img src="./img/movie-7.jpg" alt="#">
+                            <dd>
+                                <span class="catMovie-content--span1">观众评<span>9.3</span></span>
+                                <span class="catMovie-content--span2">缉魂</span>
+                                <span class="catMovie-content--span3">购票</span>
+                            </dd>
+                            </dt>
+                        </a>
+                    </dl>
+                    <dl>
+                        <a href="#">
+                            <dt>
+                                <img src="./img/movie-8.jpg" alt="#">
+                            <dd>
+                                <span class="catMovie-content--span1">观众评<span>9.2</span></span>
+                                <span class="catMovie-content--span2">许愿神龙</span>
+                                <span class="catMovie-content--span3">购票</span>
+                            </dd>
+                            </dt>
+                        </a>
+                    </dl>
+                    <dl>
+                        <a href="#">
+                            <dt>
+                                <img src="./img/movie-9.jpg" alt="#">
+                            <dd>
+                                <span class="catMovie-content--span1">观众评<span>9.3</span></span>
+                                <span class="catMovie-content--span2">疯狂原始人2</span>
+                                <span class="catMovie-content--span3">购票</span>
+                            </dd>
+                            </dt>
+                        </a>
+                    </dl>
+                    <dl>
+                        <a href="#">
+                            <dt>
+                                <img src="./img/movie-10.jpg" alt="#">
+                            <dd>
+                                <span class="catMovie-content--span1">观众评<span>9.4</span></span>
+                                <span class="catMovie-content--span2">大雄的新恐龙</span>
+                                <span class="catMovie-content--span3">购票</span>
+                            </dd>
+                            </dt>
+                        </a>
+                    </dl>
+
+                </div>
+                <!-- 即将上映 -->
+                <div>
+                    <dl>
+                        <a href="#">
+                            <dt>
+                                <img src="./img/newMovie1.jpg" alt="#">
+                            <dd>
+                                <span class="catMovie-content--span1">观众评<span>9.5</span></span>
+                                <span class="catMovie-content--span2">山路十八弯</span>
+                                <span class="catMovie-content--span3">预售</span>
+                            </dd>
+                            </dt>
+                        </a>
+                    </dl>
+                    <dl>
+                        <a href="#">
+                            <dt>
+                                <img src="./img/newMovie2.jpg" alt="#">
+                            <dd>
+                                <span class="catMovie-content--span1">观众评<span>9.4</span></span>
+                                <span class="catMovie-content--span2">大红包</span>
+                                <span class="catMovie-content--span3">预售</span>
+                            </dd>
+                            </dt>
+                        </a>
+                    </dl>
+                    <dl>
+                        <a href="#">
+                            <dt>
+                                <img src="./img/newMovie3.jpg" alt="#">
+                            <dd>
+                                <span class="catMovie-content--span1">观众评<span>9.3</span></span>
+                                <span class="catMovie-content--span2">武汉日夜</span>
+                                <span class="catMovie-content--span3">预售</span>
+                            </dd>
+                            </dt>
+                        </a>
+                    </dl>
+                    <dl>
+                        <a href="#">
+                            <dt>
+                                <img src="./img/newMovie4.jpg" alt="#">
+                            <dd>
+                                <span class="catMovie-content--span1">观众评<span>9.5</span></span>
+                                <span class="catMovie-content--span2">指挥家</span>
+                                <span class="catMovie-content--span3">预售</span>
+                            </dd>
+                            </dt>
+                        </a>
+                    </dl>
+                    <dl>
+                        <a href="#">
+                            <dt>
+                                <img src="./img/newMovie5.jpg" alt="#">
+                            <dd>
+                                <span class="catMovie-content--span1">观众评<span>9.4</span></span>
+                                <span class="catMovie-content--span2">幸运电梯</span>
+                                <span class="catMovie-content--span3">预售</span>
+                            </dd>
+                            </dt>
+                        </a>
+                    </dl>
+                    <dl>
+                        <a href="#">
+                            <dt>
+                                <img src="./img/newMovie6.jpg" alt="#">
+                            <dd>
+                                <span class="catMovie-content--span1">观众评<span>9.4</span></span>
+                                <span class="catMovie-content--span2">与我跳舞</span>
+                                <span class="catMovie-content--span3">预售</span>
+                            </dd>
+                            </dt>
+                        </a>
+                    </dl>
+                    <dl>
+                        <a href="#">
+                            <dt>
+                                <img src="./img/newMovie7.png" alt="#">
+                            <dd>
+                                <span class="catMovie-content--span1">观众评<span>9.2</span></span>
+                                <span class="catMovie-content--span2">爱遍全球</span>
+                                <span class="catMovie-content--span3">预售</span>
+                            </dd>
+                            </dt>
+                        </a>
+                    </dl>
+                    <dl>
+                        <a href="#">
+                            <dt>
+                                <img src="./img/newMovie8.jpg" alt="#">
+                            <dd>
+                                <span class="catMovie-content--span1">观众评<span>9.4</span></span>
+                                <span class="catMovie-content--span2">小伟</span>
+                                <span class="catMovie-content--span3">预售</span>
+                            </dd>
+                            </dt>
+                        </a>
+                    </dl>
+                    <dl>
+                        <a href="#">
+                            <dt>
+                                <img src="./img/newMovie9.jpg" alt="#">
+                            <dd>
+                                <span class="catMovie-content--span1">观众评<span>9.4</span></span>
+                                <span class="catMovie-content--span2">魔法鼠乐园</span>
+                                <span class="catMovie-content--span3">预售</span>
+                            </dd>
+                            </dt>
+                        </a>
+                    </dl>
+                    <dl>
+                        <a href="#">
+                            <dt>
+                                <img src="./img/newMovie10.png" alt="#">
+                            <dd>
+                                <span class="catMovie-content--span1">观众评<span>9.5</span></span>
+                                <span class="catMovie-content--span2">向死而生</span>
+                                <span class="catMovie-content--span3">预售</span>
+                            </dd>
+                            </dt>
+                        </a>
+                    </dl>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 推荐民宿/公寓（apartment） -->
+
+        <div class="apartment">
+            <div class="apartment-nav">
+                <span class="title2">推荐公寓</span>
+                <ul>
+                    <li class="apartment-active">天津</li>
+                    <li>济南</li>
+                    <li>大连</li>
+                    <li>太原</li>
+                    <li>石家庄</li>
+                    <li>秦皇岛</li>
+                    <li>呼和浩特</li>
+                    <li>潍坊</li>
+                    <li>唐山</li>
+                    <li>泰安</li>
+                </ul>
+                <span class="allbtn"><a href="#">全部></a></span>
+            </div>
+            <div class="apartment-address">
+                <!-- 天津 -->
+                <div class="apartment-tianjin grid">
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/tianjin1.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">【九月·美宿】NO.4/浓浓北欧风格/鼓楼</dd>
+                            <!-- <dd>
+                                <span>整套1居室·</span>
+                                <span>可住两人|</span>
+                                <span>老城厢/鼓楼</span> 
+                            </dd> -->
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|老城厢/鼓楼</dd>
+                            <dd class="apartment__dd-acctive3">￥88</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/tianjin2.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">【九月●美宿】NO.4/浓浓北欧情/鼓楼/古文化街/100寸投影</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|老城厢/鼓楼</dd>
+                            <dd class="apartment__dd-acctive3">￥88</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/tianjin3.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">【九月美宿】南亚小栈/天津之眼/古文化街/100寸投影仪</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|南市</dd>
+                            <dd class="apartment__dd-acctive3">￥105</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/tianjin4.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">天津之眼/古文化街 北欧亲子大床房</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|老城厢/鼓楼</dd>
+                            <dd class="apartment__dd-acctive3">￥88</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/tianjin5.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">肿瘤医院隔壁蔚蓝轩可做饭电梯2-5人</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住五人|宾水道/体院北</dd>
+                            <dd class="apartment__dd-acctive3">￥315</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/tianjin6.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">【蜜桃贰】周租/半月/月租</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|月牙河公园</dd>
+                            <dd class="apartment__dd-acctive3">￥188</dd>
+                        </a>
+                    </dl>
+                </div>
+                <!-- 济南 -->
+                <div class="apartment-jinan grid">
+
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/jinan1.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">印象城 聚隆广场【停车方便】落地大飘窗智能家居</dd>
+                            <!-- <dd>
+                                <span>整套1居室·</span>
+                                <span>可住两人|</span>
+                                <span>老城厢/鼓楼</span> 
+                            </dd> -->
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|洪家楼</dd>
+                            <dd class="apartment__dd-acctive3">￥153</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/jinan2.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">【果漫民宿】万达公寓，简约时尚大床房</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|万达广场</dd>
+                            <dd class="apartment__dd-acctive3">￥158</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/jinan3.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">济南站小树“工业风独立公寓大床房</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|火车站/堤口路</dd>
+                            <dd class="apartment__dd-acctive3">￥169</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/jinan4.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">【暖气开放】【奈斯优选】华福V+公寓</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|全福立交桥</dd>
+                            <dd class="apartment__dd-acctive3">￥120</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/jinan5.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">【暖气】100%好评北欧风超大空间飘窗电梯大床房</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|洪家楼</dd>
+                            <dd class="apartment__dd-acctive3">￥168</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/jinan6.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">【暖气开放】【奈斯优选】舒适商务大床房</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|全福立交桥</dd>
+                            <dd class="apartment__dd-acctive3">￥120</dd>
+                        </a>
+                    </dl>
+                </div>
+                <!-- 大连 -->
+                <div class="apartment-dalian grid">
+
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/dalian1.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">印象城 聚隆广场【停车方便】落地大飘窗智能家居</dd>
+                            <!-- <dd>
+                                <span>整套1居室·</span>
+                                <span>可住两人|</span>
+                                <span>老城厢/鼓楼</span> 
+                            </dd> -->
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|洪家楼</dd>
+                            <dd class="apartment__dd-acctive3">￥159</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/dalian2.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">【果漫民宿】万达公寓，简约时尚大床房</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|万达广场</dd>
+                            <dd class="apartment__dd-acctive3">￥158</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/dalian3.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">自助可月租万达随机房(行程码非单一大连当天不接待)</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|火车站/堤口路</dd>
+                            <dd class="apartment__dd-acctive3">￥189</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/dalian4.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">大连云海美地特惠温馨大床房/高新万达广场/近海事，理工大学智能门锁/可月租日租</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|全福立交桥</dd>
+                            <dd class="apartment__dd-acctive3">￥135</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/dalian5.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">万达广场鑫源公寓 豪华大床房 近海事大学、东北财经大学</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|洪家楼</dd>
+                            <dd class="apartment__dd-acctive3">￥168</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/dalian6.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">情侣大床房 华南广场亿合城楼上 超高好评 吃饭购物逛街超级方便</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|全福立交桥</dd>
+                            <dd class="apartment__dd-acctive3">￥159</dd>
+                        </a>
+                    </dl>
+                </div>
+                <!-- 太原 -->
+                <div class="apartment-taiyuan grid">
+
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/taiyuan1.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">【金苏—10】华润悦府投影大床公寓，万象城南100米</dd>
+                            <!-- <dd>
+                                <span>整套1居室·</span>
+                                <span>可住两人|</span>
+                                <span>老城厢/鼓楼</span> 
+                            </dd> -->
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|洪家楼</dd>
+                            <dd class="apartment__dd-acctive3">￥158</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/taiyuan2.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">可以洗洗衣服，拎包入住</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|万达广场</dd>
+                            <dd class="apartment__dd-acctive3">￥198</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/taiyuan3.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">新房 120"极米投影//自助入住//1080P/智能无线投屏/ins/吊椅/迎泽西大街/公元时代/公寓/理工大学
+                            </dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|火车站/堤口路</dd>
+                            <dd class="apartment__dd-acctive3">￥169</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/taiyuan4.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">云特区公寓 观影大床房 情侣约会 休闲旅游</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|全福立交桥</dd>
+                            <dd class="apartment__dd-acctive3">￥129</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/taiyuan5.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">【唐舍公寓】轻奢尊享大床房，智能门锁，近柳巷/富力/万达商圈，近太原站/南站/机场/医院，适合情侣，全景落地窗
+                            </dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|洪家楼</dd>
+                            <dd class="apartment__dd-acctive3">￥138</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/taiyuan6.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">长租 便宜【考拉公寓】北美新天地茂业王府井附近长风街亲贤街商圈长治路温暖民宿山西世贸中心</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|全福立交桥</dd>
+                            <dd class="apartment__dd-acctive3">￥148</dd>
+                        </a>
+                    </dl>
+                </div>
+                <!-- 石家庄 -->
+                <div class="apartment-shijiazhuang grid">
+
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/shijiazhuang1.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">兰亭雅居Ⅳ荣盛城/火车站/西美花街/汇华广场/古韵广场</dd>
+                            <!-- <dd>
+                                <span>整套1居室·</span>
+                                <span>可住两人|</span>
+                                <span>老城厢/鼓楼</span> 
+                            </dd> -->
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|洪家楼</dd>
+                            <dd class="apartment__dd-acctive3">￥158</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/shijiazhuang2.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">西美商圈新火车站附近 宫家庄的温馨港湾</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|万达广场</dd>
+                            <dd class="apartment__dd-acctive3">￥138</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/shijiazhuang3.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">【挽里｜Room幻想】巨幕投影CIBN酷喵影视会员/紧邻新百广场/万象城/地铁/北国/勒泰</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|火车站/堤口路</dd>
+                            <dd class="apartment__dd-acctive3">￥169</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/shijiazhuang4.png" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">地铁①号线西王/石家庄职业技术学院对面-温馨大床房</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|全福立交桥</dd>
+                            <dd class="apartment__dd-acctive3">￥108</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/shijiazhuang5.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">西西de民宿紫秋 | 极简 美学 高端 洁净 投影房 勒泰北国乐汇万象商圈地铁步行2分钟</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|洪家楼</dd>
+                            <dd class="apartment__dd-acctive3">￥168</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/shijiazhuang6.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">新百广场【鲸鱼】丽鼎公寓，自助入住 | 华强广场，吃喝玩乐商圈，出行方便，欢迎入住~</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|全福立交桥</dd>
+                            <dd class="apartment__dd-acctive3">￥180</dd>
+                        </a>
+                    </dl>
+                </div>
+                <!-- 秦皇岛 -->
+                <div class="apartment-qinhuangdao grid">
+
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/qinhuangdao1.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">
+                                ^M设计、观海公寓^、小清新风格房，因为不会拍照实际房间比图片好。全屋壁纸定制家具。位置燕山大学/科师/茂业新天地/燕大</dd>
+                            <!-- <dd>
+                                <span>整套1居室·</span>
+                                <span>可住两人|</span>
+                                <span>老城厢/鼓楼</span> 
+                            </dd> -->
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|洪家楼</dd>
+                            <dd class="apartment__dd-acctive3">￥159</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/qinhuangdao2.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">
+                                ^M设计、观海公寓^、、稀缺南北通透公寓式观海房。坐在床上可以看海。紧临燕山大学/茂业/科师/燕大/茂业新天地/小吃街</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|万达广场</dd>
+                            <dd class="apartment__dd-acctive3">￥188</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/qinhuangdao3.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">
+                                『暗沉•梦落』No.1浪漫ins风/距火车站近/繁华小吃街/2人生日party/距离万达、世纪港湾近、每日酒精喷雾消毒～</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|火车站/堤口路</dd>
+                            <dd class="apartment__dd-acctive3">￥169</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/qinhuangdao4.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">特价观海，近燕大，茂业天地，科师，奥体，燕大小吃街，秦皇小巷小吃街</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|全福立交桥</dd>
+                            <dd class="apartment__dd-acctive3">￥165</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/qinhuangdao5.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">北戴河刘庄临海大床房，电梯免费加工海鲜</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|洪家楼</dd>
+                            <dd class="apartment__dd-acctive3">￥228</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/qinhuangdao6.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">【M设计、观海公寓】因不会拍照实际房间比图片好很多，全屋壁纸加全屋定制家具。紧临、燕大（燕山大学）/茂业/科师
+                            </dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|全福立交桥</dd>
+                            <dd class="apartment__dd-acctive3">￥169</dd>
+                        </a>
+                    </dl>
+                </div>
+                <!-- 呼和浩特 -->
+                <div class="apartment-huhehaote grid">
+
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/huhehaote1.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">【乐活 罗马之光】投影/零压床垫/内大师大/名都/家乐福</dd>
+                            <!-- <dd>
+                                <span>整套1居室·</span>
+                                <span>可住两人|</span>
+                                <span>老城厢/鼓楼</span> 
+                            </dd> -->
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|洪家楼</dd>
+                            <dd class="apartment__dd-acctive3">￥135</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/huhehaote2.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">长乐宫万达 一室一厅 落地窗 夜景</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|万达广场</dd>
+                            <dd class="apartment__dd-acctive3">￥188</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/huhehaote3.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">『 周年庆 』【A范思哲】博尔顿广场/投影美宿/万达广场/维多利摩尔城/迈阿密/呼和浩特体育活动中心</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|火车站/堤口路</dd>
+                            <dd class="apartment__dd-acctive3">￥165</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/huhehaote4.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">【芒果社区：奕奕欢欢】03/内大南校区/创业学院/南湖湿地/美通/恒盛广场/长租超优惠</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|全福立交桥</dd>
+                            <dd class="apartment__dd-acctive3">￥148</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/huhehaote5.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">［柒·舍art·King］70曲屏巨幕4k高清</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|洪家楼</dd>
+                            <dd class="apartment__dd-acctive3">￥218</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/huhehaote6.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">『 周年庆
+                                』【B拉夫劳伦】博尔顿广场/投影美宿/万达广场/维多利摩尔城/迈阿密/呼和浩特体育活动中心/春度廉政文化公园</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|全福立交桥</dd>
+                            <dd class="apartment__dd-acctive3">￥180</dd>
+                        </a>
+                    </dl>
+                </div>
+                <!-- 潍坊 -->
+                <div class="apartment-weifang grid">
+
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/weifang1.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">静雅温馨公寓</dd>
+                            <!-- <dd>
+                                <span>整套1居室·</span>
+                                <span>可住两人|</span>
+                                <span>老城厢/鼓楼</span> 
+                            </dd> -->
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|洪家楼</dd>
+                            <dd class="apartment__dd-acctive3">￥158</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/weifang2.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">（牵手）近火车站中百泰华，经贸学院，可做饭，大屏投影，智能门锁，阳光温馨大床房</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|万达广场</dd>
+                            <dd class="apartment__dd-acctive3">￥138</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/weifang3.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">万达」泰华」阳光100商圈」火车站近」极简轻奢」智能家居」安心住</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|火车站/堤口路</dd>
+                            <dd class="apartment__dd-acctive3">￥189</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/weifang4.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">潍坊学院北门简约小公寓</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|全福立交桥</dd>
+                            <dd class="apartment__dd-acctive3">￥125</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/weifang5.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">绿野仙踪18
+                                火车站旁轻奢河景落地窗公寓，投影设备大床房，近中百泰华阳光100经贸学院医院，温馨特像家，独享百兆宽带</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|洪家楼</dd>
+                            <dd class="apartment__dd-acctive3">￥148</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/weifang6.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">金沙城市广场公寓短租(月租优惠） 南向清新经济实惠干净整洁拎包入住近火车站泰华</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|全福立交桥</dd>
+                            <dd class="apartment__dd-acctive3">￥138</dd>
+                        </a>
+                    </dl>
+                </div>
+                <!-- 唐山 -->
+                <div class="apartment-tangshan grid">
+
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/tangshan1.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">镜湖中心区蓝居亲子儿童房</dd>
+                            <!-- <dd>
+                                <span>整套1居室·</span>
+                                <span>可住两人|</span>
+                                <span>老城厢/鼓楼</span> 
+                            </dd> -->
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|洪家楼</dd>
+                            <dd class="apartment__dd-acctive3">￥159</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/tangshan2.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">爱琴海幸福客栈</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|万达广场</dd>
+                            <dd class="apartment__dd-acctive3">￥188</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/tangshan3.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">唐宿-恒大学庭密码锁（近远洋城）（会展中心）（唐山学院）</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|火车站/堤口路</dd>
+                            <dd class="apartment__dd-acctive3">￥199</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/tangshan4.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">八方商圈便利温馨一居</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|全福立交桥</dd>
+                            <dd class="apartment__dd-acctive3">￥160</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/tangshan5.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">远洋城 吾悦广场清新舒适公寓 近会展中心唐山学院师范学院</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|洪家楼</dd>
+                            <dd class="apartment__dd-acctive3">￥168</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/tangshan6.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">新煤医道夜市附近 眼科医院 煤医卫校附近多套日租民宿</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|全福立交桥</dd>
+                            <dd class="apartment__dd-acctive3">￥129</dd>
+                        </a>
+                    </dl>
+                </div>
+                <!-- 泰安 -->
+                <div class="apartment-taian grid">
+
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/taian1.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">泰安万达欧式观景大床房/泰山脚下/楼下万达广场/近高铁站，泰安老街</dd>
+                            <!-- <dd>
+                                <span>整套1居室·</span>
+                                <span>可住两人|</span>
+                                <span>老城厢/鼓楼</span> 
+                            </dd> -->
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|洪家楼</dd>
+                            <dd class="apartment__dd-acctive3">￥128</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/taian2.png" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">泰山万达天外村红门登山公寓</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|万达广场</dd>
+                            <dd class="apartment__dd-acctive3">￥158</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/taian3.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">【橙途】泰山脚下高铁泮河老街爱琴海一居</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|火车站/堤口路</dd>
+                            <dd class="apartment__dd-acctive3">￥159</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/taian4.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">【有地暖】Momo's talk泰山火车站/万达/浪漫情侣闺蜜</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|全福立交桥</dd>
+                            <dd class="apartment__dd-acctive3">￥128</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/taian5.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">泰安万达北欧风格大床/泰山脚下/楼下万达广场/近高铁站，会展中心</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|洪家楼</dd>
+                            <dd class="apartment__dd-acctive3">￥158</dd>
+                        </a>
+                    </dl>
+                    <dl class="grid-cell--1">
+                        <a href="#">
+                            <dt><img src="./img/taian6.jpg" alt="#"></dt>
+                            <dd class="apartment__dd-acctive1">1992--泰安首家猫咪民宿 泰山脚下 火车站 天外村 红门 网红 英短 蓝白</dd>
+                            <dd class="apartment__dd-acctive2">整套1居室·可住两人|全福立交桥</dd>
+                            <dd class="apartment__dd-acctive3">￥1288</dd>
+                        </a>
+                    </dl>
+                </div>
+            </div>
+
+        </div>
+        <!-- 猜你喜欢 -->
+        <div class="box">
+            <!-- 导航栏 -->
+            <div class="recommend">
+                <div class="box-nav">
+                    <span class="nav__left">猜你喜欢</span>
+                    <span class="nav__right">为你甄选最合适的</span>
+                </div>
+                <!-- 内容 -->
+                <div class="neirou">
+                    <!-- 第一行 -->
+                    <div class="grid">
+
+                        <dl class="grid-cell-1">
+                            <a href="#">
+                                <dd><img src="./img/1.jpg" alt=""></dd>
+                                <dt>屯老二农家铁锅炖（松园店）</dt>
+                                <dt class="font">昌平镇</dt>
+                                <dt class="font1">￥<span>88.0</span>起</dt>
+                            </a>
+
+                        </dl>
+                        <dl class="grid-cell-1">
+                            <a href="#">
+                                <dd><img src="./img/2.jpg" alt=""></dd>
+                                <dt>芦月轩羊蝎子（杨闸店）</dt>
+                                <dt class="font">管庄</dt>
+                                <dt class="font1">￥<span>89.9</span>起</dt>
+                            </a>
+                        </dl>
+                        <dl class="grid-cell-1">
+                            <a href="#">
+                                <dd><img src="./img/3.jpg" alt=""></dd>
+                                <dt>华莱士炸鸡汉堡（石油大学店）</dt>
+                                <dt class="font">昌平镇</dt>
+                                <dt class="font1">￥<span>19.9</span>起</dt>
+                            </a>
+                        </dl>
+                        <dl class="grid-cell-1">
+                            <a href="#">
+                                <dd><img src="./img/4.jpg" alt=""></dd>
+                                <dt>便宜坊烤鸭店（富丰路店）</dt>
+                                <dt class="font">看丹桥/新华街</dt>
+                                <dt class="font1">￥<span>92.0</span>起</dt>
+                            </a>
+                        </dl>
+                        <dl class="grid-cell-1">
+                            <a href="#">
+                                <dd><img src="./img/5.jpg" alt=""></dd>
+                                <dt>味多美（双俞树紫金数码店）</dt>
+                                <dt class="font">双俞树</dt>
+                                <dt class="font1">￥<span>1.25</span>起</dt>
+                            </a>
+                        </dl>
+                    </div>
+                    <!-- 第二行 -->
+                    <div class="grid">
+                        <dl class="grid-cell-1">
+                            <a href="#">
+                                <dd><img src="./img/6.jpg" alt=""></dd>
+                                <dt>木美土里造型（武夷花园店）</dt>
+                                <dt class="font">武夷花园</dt>
+                                <dt class="font1">￥<span>29.7</span>起</dt>
+                            </a>
+                        </dl>
+                        <dl class="grid-cell-1">
+                            <a href="#">
+                                <dd><img src="./img/7.jpg" alt=""></dd>
+                                <dt>分米鸡DM Chicken（喜隆多店）</dt>
+                                <dt class="font">苹果园</dt>
+                                <dt class="font1">￥<span>88.0</span>起</dt>
+                            </a>
+                        </dl>
+                        <dl class="grid-cell-1">
+                            <a href="#">
+                                <dd><img src="./img/8.jpg" alt=""></dd>
+                                <dt>铁木真烤肉自助城（西三旗店）</dt>
+                                <dt class="font">西三旗</dt>
+                                <dt class="font1">￥<span>82.9</span>起</dt>
+                            </a>
+                        </dl>
+                        <dl class="grid-cell-1">
+                            <a href="#">
+                                <dd><img src="./img/9.jpg" alt=""></dd>
+                                <dt>木北造型（亦庄上海沙龙店）</dt>
+                                <dt class="font">亦庄</dt>
+                                <dt class="font1">￥<span>58.0</span>起</dt>
+                            </a>
+                        </dl>
+                        <dl class="grid-cell-1">
+                            <a href="">
+                                <dd><img src="./img/10.png" alt=""></dd>
+                                <dt>宽板凳老灶火锅（古城店）</dt>
+                                <dt class="font">古城/八角</dt>
+                                <dt class="font1">￥<span>89.9</span>起</dt>
+                            </a>
+                        </dl>
+                    </div>
+                    <!-- 第三行 -->
+                    <div class="grid">
+                        <dl class="grid-cell-1">
+                            <a href="#">
+                                <dd><img src="./img/11.png" alt=""></dd>
+                                <dt>巴蜀王婆大虾（莲花桥店）</dt>
+                                <dt class="font">北京西站/六里桥</dt>
+                                <dt class="font1">￥<span>95.0</span>起</dt>
+                            </a>
+                        </dl>
+                        <dl class="grid-cell-1">
+                            <a href="#">
+                                <dd><img src="./img/12.jpg" alt=""></dd>
+                                <dt>vfly蹦床公园（斯普瑞斯...）</dt>
+                                <dt class="font">金盏</dt>
+                                <dt class="font1">￥<span>69.0</span>起</dt>
+                            </a>
+                        </dl>
+                        <dl class="grid-cell-1">
+                            <a href="#">
+                                <dd><img src="./img/13.jpg" alt=""></dd>
+                                <dt>火炉火烤肉·芝士排骨...</dt>
+                                <dt class="font">西红门</dt>
+                                <dt class="font1">￥<span>218.9</span>起</dt>
+                            </a>
+                        </dl>
+                        <dl class="grid-cell-1">
+                            <a href="#">
+                                <dd><img src="./img/14.jpg" alt=""></dd>
+                                <dt>蟹老宋香锅（铺黄榆方庄店）</dt>
+                                <dt class="font">方庄/铺黄榆</dt>
+                                <dt class="font1">￥<span>88.8</span>起</dt>
+                            </a>
+                        </dl>
+                        <dl class="grid-cell-1">
+                            <a href="#">
+                                <dd><img src="./img/15.jpg" alt=""></dd>
+                                <dt>食品安全档案九门轩...</dt>
+                                <dt class="font">前门/大栅栏</dt>
+                                <dt class="font1">￥<span>5.8</span>起</dt>
+                            </a>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="city">
+                <span>美团导航</span>
+                <div class="city-style bottom-border">
+                    <div class="city-title">热门城市</div>
+                    <ul>
+                        <li><a href="#">武汉</a></li>
+                        <li><a href="#">合肥</a></li>
+                        <li><a href="#">大连</a></li>
+                        <li><a href="#">石家庄</a></li>
+                        <li><a href="#">太原</a></li>
+                        <li><a href="#">长春</a></li>
+                        <li><a href="#">南京</a></li>
+                        <li><a href="#">长沙</a></li>
+                        <li><a href="#">成都</a></li>
+                        <li><a href="#">深圳</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">昆明</a></li>
+                        <li><a href="#">哈尔滨</a></li>
+                        <li><a href="#">东莞</a></li>
+                        <li><a href="#">苏州</a></li>
+                        <li><a href="#">福州</a></li>
+                        <li><a href="#">西安</a></li>
+                        <li><a href="#">上海</a></li>
+                        <li><a href="#">北京</a></li>
+                        <li><a href="#">杭州</a></li>
+                        <li><a href="#">佛山</a></li>
+                    </ul>
+                </div>
+                <div class="city-style bottom-border">
+                    <div class="city-title">热门分类</div>
+                    <ul>
+                        <li><a href="#">酒店</a></li>
+                        <li><a href="#">美食</a></li>
+                        <li><a href="#">休闲娱乐</a></li>
+                        <li><a href="#">运动健身</a></li>
+                        <li><a href="#">生活服务</a></li>
+                        <li><a href="#">上门服务</a></li>
+                        <li><a href="#">购物</a></li>
+                        <li><a href="#">时尚购</a></li>
+                        <li><a href="#">本地购物</a></li>
+                        <li><a href="#">结婚</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">摄影写真</a></li>
+                        <li><a href="#">宴会</a></li>
+                        <li><a href="#">丽人</a></li>
+                        <li><a href="#">母婴亲子</a></li>
+                        <li><a href="#">学习培训</a></li>
+                        <li><a href="#">家装</a></li>
+                        <li><a href="#">汽车服务</a></li>
+                        <li><a href="#">医疗</a></li>
+                        <li><a href="#">宠物</a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+                <div class="city-style">
+                    <div class="city-title">热门周边</div>
+                    <ul>
+                        <li><a href="#">门头沟区酒店</a></li>
+                        <li><a href="#">廊坊美食</a></li>
+                        <li><a href="#">门头沟休闲娱乐</a></li>
+                        <li><a href="#">廊坊运动健身</a></li>
+                        <li><a href="#">门头沟区生活服务</a></li>
+                        <li><a href="#">门头沟区上门服务</a></li>
+                        <li><a href="#">廊坊购物</a></li>
+                        <li><a href="#">门头沟区时尚购物</a></li>
+                        <li><a href="#">门头沟区本地购物</a></li>
+                        <li><a href="#">大厂回族自治县结婚</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">门头沟区摄影写真</a></li>
+                        <li><a href="#">大厂回族自治县宴会</a></li>
+                        <li><a href="#">廊坊丽人</a></li>
+                        <li><a href="#">廊坊母婴亲子</a></li>
+                        <li><a href="#">门头沟区学习培训</a></li>
+                        <li><a href="#">门头沟区家装</a></li>
+                        <li><a href="#">廊坊汽车服务</a></li>
+                        <li><a href="#">门头沟区医疗</a></li>
+                        <li><a href="#">大厂回族自治县汽车服务</a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 首页尾部 -->
+    <footer>
+        <div class="footer">
+            <div class="middle">
+                <div class="middle-auto clearfix">
+                    <div class="footer-column">
+                        <dl>
+                            <dt>用户帮助</dt>
+                            <dd><a href="#">申请退款</a></dd>
+                            <dd><a href="#">常见问题</a></dd>
+                            <dd><a href="#">用户协议</a></dd>
+                            <dd><a href="#">隐私政策</a></dd>
+                            <dd><a href="#">反诈骗公告</a></dd>
+                            <dd><a href="#">消费者权益保障</a></dd>
+                        </dl>
+                        <dl>
+                            <dt>美团服务</dt>
+                            <dd><a href="#">美团外卖</a></dd>
+                            <dd><a href="#">美团酒店</a></dd>
+                            <dd><a href="#">猫眼电影</a></dd>
+                            <dd><a href="#">美团配送</a></dd>
+                            <dd><a href="#">美团云</a></dd>
+                            <dd><a href="#">大众点评</a></dd>
+                            <dd><a href="#">美团民宿</a></dd>
+                            <dd><a href="#">无人配送</a></dd>
+                        </dl>
+                    </div>
+                    <div class="footer-column">
+                        <dl>
+                            <dt>商家合作</dt>
+                            <dd><a href="#">美团餐饮商户中心</a></dd>
+                            <dd><a href="#">美团商家入住(非外卖)</a></dd>
+                            <dd><a href="#">美团外卖开户申请</a></dd>
+                            <dd><a href="#">美团收银官网</a></dd>
+                            <dd><a href="#">外卖配送加盟申请</a></dd>
+                            <dd><a href="#">美团餐饮学院</a></dd>
+                            <dd><a href="#">境内度假商家入驻</a></dd>
+                            <dd><a href="#">综合商家入驻</a></dd>
+                            <dd><a href="#">美团民宿房东商家入驻</a></dd>
+                            <dd><a href="#">商家开票申请</a></dd>
+                            <dd><a href="#">美团智能收银机</a></dd>
+                            <dd><a href="#">美团餐饮开放平台</a></dd>
+                            <dd><a href="#">美团收单</a></dd>
+                            <dd><a href="#">免费使用美团排队</a></dd>
+                            <dd><a href="#">快驴进货商家合作</a></dd>
+                            <dd><a href="#">美团闪购商家入驻</a></dd>
+                        </dl>
+                    </div>
+                    <div class="footer-column">
+                        <dl>
+                            <dt>代理商加盟</dt>
+                            <dd><a href="#">美团外卖合作商招募</a></dd>
+                            <dd><a href="#">到店餐饮合作商招募</a></dd>
+                            <dd><a href="#">非餐饮代理商招募</a></dd>
+                            <dd><a href="#">美团联盟</a></dd>
+                            <dd><a href="#">美团收银招募线上分销商</a></dd>
+                            <dd><a href="#">美团5S服务商招募</a></dd>
+                            <dd><a href="#">美团收单合作商招募</a></dd>
+                            <dd><a href="#">美团充电宝合作商招募</a></dd>
+                        </dl>
+                        <dl>
+                            <dt>美团规则</dt>
+                            <dd><a href="#">规则中心</a></dd>
+                            <dd><a href="#">规则目录</a></dd>
+                            <dd><a href="#">规则评议院</a></dd>
+                        </dl>
+                    </div>
+                    <div class="footer-column">
+                        <dl>
+                            <dt>关注美团</dt>
+                            <dd><a href="#">美团新浪微博</a></dd>
+                        </dl>
+                        <dl>
+                            <dt>公司信息</dt>
+                            <dd><a href="#">关于我们</a></dd>
+                            <dd><a href="#">投资者关系</a></dd>
+                            <dd><a href="#">加入我们</a></dd>
+                            <dd><a href="#">商户诚信公约及管理办法</a></dd>
+                            <dd><a href="#">保险经纪资质</a></dd>
+                        </dl>
+                        <dl>
+                            <dt>廉正举报</dt>
+                            <dd><a href="#">廉正举报平台</a></dd>
+                        </dl>
+                        <dl>
+                            <dt>知识产权</dt>
+                            <dd><a href="#">知识产权维权平台</a></dd>
+                        </dl>
+                    </div>
+                    <div class="footer-column">
+                        <dl>
+                            <dt>消费者服务热线</dt>
+                            <dd>外卖消费者：<a href="#">10109777</a></dd>
+                            <dd>猫眼消费者：<a href="#">10105335</a></dd>
+                            <dd>其他消费者：<a href="#">10107888</a></dd>
+                        </dl>
+                        <dl>
+                            <dt>商家服务热线</dt>
+                            <dd>外卖&餐饮商家：<a href="#">10105557</a></dd>
+                            <dd>休闲娱乐、丽人、ktv、教育、结婚、亲子、家装等商家：<a href="#">10100107</a></dd>
+                        </dl>
+                        <dl>
+                            <dt>投诉举报专区</dt>
+                            <dd>违法和不良信息举报电话：<a href="#">4006018900</a></dd>
+                            <dd>举报邮箱：<a href="#">tousujubao@meituan.com</a></dd>
+                            <dd><a href="#">网上有害信息举报</a></dd>
+                        </dl>
+                        <dl>
+                            <dt><a href="#">商家自助入驻美团入口</a></dt>
+                        </dl>
+                        <dl>
+                            <dt><a href="#">供应商注册入口</a></dt>
+                        </dl>
+                    </div>
+                </div>
+                <div class="footer-copyright clearfix">
+                    <div class="footer-copyright-left">
+                        <p>©美团网团购 meituan.com <a href="#">京ICP证070791号</a><a href="#">京ICP备10211739号-1</a></p>
+                        <p><a href="#">广播电视节目制作经营许可证（京）字第03889号</a></p>
+                        <p><a href="#">食品经营许可证</a><a href="#">互联网药品信息服务资格证</a></p>
+                        <p><a href="#">医疗器械网络交易服务第三方平台备案：（京）网械平台备字[2018]第00004号</a></p>
+                    </div>
+                    <div class="footer-copyright-right">
+                        <a href="#"><img src="./img/d0289dc0a46fc5b15b3363ffa78cf6c719256.png" class="imgs">京公网安备
+                            11000002002052号</a>
+                        <div class="footer-copyright-cert">
+                            <a href="#"><img src="./img/3e7f8a17e55bace814166b667618b459366061.png" alt=""
+                                    class="imgskr"></a>
+                            <p class="pss">北京三快科技有限公司</p>
+                            <a href="#" class="skr scy">备案信息</a>
+                            <a href="#" class="skr2 scy">可信网站</a>
+                            <a href="#" class="skr3 scy">12315消费争议</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+<script src="./js/home.js"></script>
+</body>
+</html>
