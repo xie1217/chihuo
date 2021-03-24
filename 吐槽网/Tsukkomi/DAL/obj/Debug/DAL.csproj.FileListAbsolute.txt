@@ -1,0 +1,9 @@
+E:\恢复1\Root\吐槽网\Tsukkomi\DAL\bin\Debug\DAL.dll
+E:\恢复1\Root\吐槽网\Tsukkomi\DAL\bin\Debug\DAL.pdb
+E:\恢复1\Root\吐槽网\Tsukkomi\DAL\bin\Debug\MODAL.dll
+E:\恢复1\Root\吐槽网\Tsukkomi\DAL\bin\Debug\MODAL.pdb
+E:\恢复1\Root\吐槽网\Tsukkomi\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+E:\恢复1\Root\吐槽网\Tsukkomi\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+E:\恢复1\Root\吐槽网\Tsukkomi\DAL\obj\Debug\DAL.csproj.CopyComplete
+E:\恢复1\Root\吐槽网\Tsukkomi\DAL\obj\Debug\DAL.dll
+E:\恢复1\Root\吐槽网\Tsukkomi\DAL\obj\Debug\DAL.pdb
