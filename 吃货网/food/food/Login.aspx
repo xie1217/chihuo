@@ -33,117 +33,86 @@
                 <ul class="navbar-box-ul">
                     <li class="navbar-box-ul-li"><a href="#">首页</a></li>
                     <li class="navbar-box-ul-li looktwo"><a href="#">吃货天堂 <span>
-                        <img src="Content/images/msj_menuarrow.gif"
-                            alt=""></span></a>
+                        <img src="Content/images/msj_menuarrow.gif" alt=""></span></a>
                         <div class="navbar-slide">
                             <div class="navbar-slide-top">
                                 <h3>家常菜谱</h3>
                                 <ul class="navbar-slide-top-ul">
                                     <li><a href="#">家常菜</a></li>
-                                    <li><a href="#">家常菜</a></li>
-                                    <li><a href="#">家常菜</a></li>
-                                    <li><a href="#">家常菜</a></li>
-                                    <li><a href="#">家常菜</a></li>
-                                    <li><a href="#">家常菜</a></li>
-                                    <li><a href="#">家常菜</a></li>
-                                    <li><a href="#">家常菜</a></li>
-                                    <li><a href="#">家常菜</a></li>
-                                    <li><a href="#">家常菜</a></li>
-                                    <li><a href="#">家常菜</a></li>
-                                    <li><a href="#">家常菜</a></li>
-                                    <li><a href="#">家常菜</a></li>
-                                    <li><a href="#">家常菜</a></li>
-                                    <li><a href="#">家常菜</a></li>
-                                    <li><a href="#">家常菜</a></li>
+                                    <li><a href="#">凉菜</a></li>
+                                    <li><a href="#">素食</a></li>
+                                    <li><a href="#">晚餐</a></li>
+                                    <li><a href="#">私家菜</a></li>
+                                    <li><a href="#">热菜</a></li>
+                                    <li><a href="#">海鲜</a></li>
+                                    <li><a href="#">孕妇餐</a></li>
+                                    <li><a href="#">早餐</a></li>
+                                    <li><a href="#">午餐</a></li>
+                                    <li><a href="#">甜品点</a></li>
+                                    <li><a href="#">汤粥</a></li>
+                                    <li><a href="#">宝宝食谱-婴儿食谱</a></li>
+                                    <li><a href="#">糕点主食</a></li>
+                                    <li><a href="#">微波炉</a></li>
                                 </ul>
                             </div>
                             <div class="navbar-slide-middle">
                                 <div class="navbar-slide-middle__item">
-                                    <h3>中华菜谱</h3>
+                                    <h3>中华菜系</h3>
                                     <ul>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
+                                        <li><a href="#">粤菜</a></li>
+                                        <li><a href="#">东北菜</a></li>
+                                        <li><a href="#">湘菜</a></li>
+                                        <li><a href="#">鲁菜</a></li>
+                                        <li><a href="#">浙菜</a></li>
+                                        <li><a href="#">湖北菜</a></li>
+                                        <li><a href="#">清真菜</a></li>
                                     </ul>
                                 </div>
                                 <div class="navbar-slide-middle__item">
-                                    <h3>中华菜谱</h3>
+                                    <h3>各地小吃</h3>
                                     <ul>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
+                                        <li><a href="#">四川小吃</a></li>
+                                        <li><a href="#">广东小吃</a></li>
+                                        <li><a href="#">北京小吃</a></li>
+                                        <li><a href="#">陕西小吃</a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="navbar-slide-middle">
                                 <div class="navbar-slide-middle__item">
-                                    <h3>中华菜谱</h3>
+                                    <h3>外国菜谱</h3>
                                     <ul>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
+                                        <li><a href="#">韩国料理</a></li>
+                                        <li><a href="#">日本料理</a></li>
+                                        <li><a href="#">法国菜</a></li>
+                                        <li><a href="#">意大利餐</a></li>
                                     </ul>
                                 </div>
                                 <div class="navbar-slide-middle__item">
-                                    <h3>中华菜谱</h3>
+                                    <h3>烘培</h3>
                                     <ul>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
+                                        <li><a href="#">蛋糕面包</a></li>
+                                        <li><a href="#">饼干配方</a></li>
+                                        <li><a href="#">甜品点心</a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="navbar-slide-middle">
                                 <div class="navbar-slide-middle__item">
-                                    <h3>中华菜谱</h3>
+                                    <h3>厨房百科</h3>
                                     <ul>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
+                                        <li><a href="#">摆盘围边</a></li>
+                                        <li><a href="#">烹饪技巧</a></li>
+                                        <li><a href="#">生活妙招</a></li>
+                                        <li><a href="#">美食专题</a></li>
                                     </ul>
                                 </div>
                                 <div class="navbar-slide-middle__item">
-                                    <h3>中华菜谱</h3>
+                                    <h3>食材百科</h3>
                                     <ul>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
-                                        <li><a href="#">川菜</a></li>
+                                        <li><a href="#">蔬菜</a></li>
+                                        <li><a href="#">水果</a></li>
+                                        <li><a href="#">谷类</a></li>
                                     </ul>
                                 </div>
                             </div>
